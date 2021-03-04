@@ -1,16 +1,12 @@
-Solutions of the 30 Days of React code challenges made by Asabeneh 
+# Solutions for the 30 Days of React - Challenges made by Asabeneh
 
 ## [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
 
 > skip
 
----
-
 ## [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
 
 ## **Exercises: What is React?**
-
----
 
 1. What is React?
 
@@ -46,8 +42,6 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 ## **Exercises: Why React?**
 
----
-
 1. Why did you chose to use react?
 
     > skip
@@ -61,8 +55,6 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
     > skip
 
 ## **Exercises: JSX**
-
----
 
 1. What is an HTML element?
 
@@ -97,8 +89,6 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
     > Babel, in this case, understands ECMAScript (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
 
 ## **Exercises: JSX Elements**
-
----
 
 1. What is a JSX element?
 
@@ -145,8 +135,6 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 ## **Exercises: Inline Style**
 
----
-
 1. Create a style object for the main JSX
 
     ```jsx
@@ -185,13 +173,9 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
     > skip
 
----
-
 ## [Day 3 - Setting Up](https://github.com/Asabeneh/30-Days-Of-React/blob/master/03_Day_Setting_Up/03_setting_up.md)
 
 ## **Exercises: Level 1**
-
----
 
 1. What is a module?
 
@@ -229,26 +213,237 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
     > skip
 
-10. Try to make a different custom module in a different file and import it to index.js.
-
     > skip
 
----
+10. Try to make a different custom module in a different file and import it to index.js.
 
 ## **Exercises: Level 2**
-
----
 
 1. Import and render the following images
 
     ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/frontend_technologies.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/frontend_technologies.png)
 
+    ```jsx
+    import userImg from './images/asabeneh.jpg';
+    import cssImg from './images/css_logo.png';
+    import htmlImg from './images/html_logo.png';
+    import jsLogo from './images/js_logo.png';
+    import reactImg from './images/react_logo.png';
+    import "./styles.css";
+
+    const styleImg = {
+      display: 'flex',
+      margin: '0 auto',
+      width: '20vw'
+    };
+
+    const techs = (
+      <>
+        <h1 style={{ textAlign: 'center' }}>FRONT END TECHNOLOGIES</h1>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto'
+          }}
+        >
+          <img style={styleImg} src={cssImg} alt="CSS logo" />
+          <img style={styleImg} src={htmlImg} alt="HTML logo" />
+          <img style={styleImg} src={jsLogo} alt="React logo" />
+          <img style={styleImg} src={reactImg} alt="React logo" />
+        </div>
+      </>
+    );
+    ```
+
+    **Live demo:** 
+
+    [https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js](https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js)
+
 2. Use h1, p, input and button HTML elements to create the following design using JSX
 
 ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/news_letter_design.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/news_letter_design.png)
+
+```jsx
+const divStyling = {
+  fontFamily: "Montserrat",
+  backgroundColor: "#c2e6f4",
+  display: "grid",
+  borderRadius: "1vw",
+  placeItems: "center",
+  placeContent: "center",
+  textAlign: "center",
+  margin: "0 auto",
+  height: "100vh"
+};
+
+const inputStyling = {
+  border: "none",
+  borderRadius: "4px",
+  margin: "1vw",
+  textAlign: "center",
+  padding: "1vw"
+};
+
+const buttonStyling = {
+  border: "none",
+  borderRadius: "4px",
+  backgroundColor: "#f37474",
+  color: "white",
+  padding: "1vw 6vw",
+  margin: "1vw"
+};
+
+const main = (
+  <div style={divStyling}>
+    <h1>SUBSCRIBE</h1>
+    <p>Sign up with your email to receive news and updates</p>
+    <div>
+      <input style={inputStyling} type="text" placeholder={"First Name"} />
+      <input style={inputStyling} type="text" placeholder={"Last Name"} />
+      <input style={inputStyling} type="email" placeholder={"email"} />
+    </div>
+    <button style={buttonStyling} type="submit">
+      SUBSCRIBE
+    </button>
+  </div>
+);
+
+export default function App() {
+  return <div className="App">{main}</div>;
+}
+```
+
+**Live demo:** 
+
+[https://codesandbox.io/s/day-3-5dsrf](https://codesandbox.io/s/day-3-5dsrf)
 
 ## **Exercises: Level 3**
 
 1. Design the following user card.
 
 ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/user_card_design_jsx.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/user_card_design_jsx.png)
+
+```jsx
+import userImg from "./images/asabeneh.jpg";
+
+const headerStyling = {
+  fontFamily: "Montserrat",
+  display: "grid",
+  alignItems: "left",
+  justifyContent: "left",
+  width: "100vw",
+  textAlign: "center"
+};
+
+const imgStyling = {
+  borderRadius: "50%",
+  height: "25vw"
+};
+
+const header = (
+  <>
+    <div style={headerStyling} className="user-card">
+      <img style={imgStyling} src={userImg} alt="user image" />
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "left",
+          textAlign: "left",
+          margin: "1vw"
+        }}
+        className="captions"
+      >
+        <h4 style={{ textAlign: "left" }}>ASABENEH YETAYEH</h4>
+        <i
+          style={{ color: "green", marginLeft: "1vw" }}
+          class="fas fa-check-circle"
+        ></i>
+      </div>
+      <div className="sub">
+        <sub style={{ textAlign: "left" }}>Senior Developer Finland</sub>
+      </div>
+    </div>
+  </>
+);
+
+const skillsArray = [
+  "HTML",
+  "CSS",
+  "Sass",
+  "JS",
+  "React",
+  "Node",
+  "Python",
+  "Flask",
+  "Django",
+  "NumPy",
+  "Pandas",
+  "Data",
+  "Analysis",
+  "MySQL",
+  "GraphQL",
+  "D3.js",
+  "Gatsby",
+  "Docker",
+  "Heroku",
+  "Git"
+];
+
+const skillsFormatted = skillsArray.map((item) => (
+  <ul
+    key={item}
+    style={{
+      display: "inline-flex",
+      color: "whitesmoke",
+      padding: ".75vw",
+      margin: ".25vw",
+      backgroundColor: "mediumseagreen",
+      borderRadius: "4px"
+    }}
+  >
+    {item}
+  </ul>
+));
+
+const main = (
+  <>
+    <div
+      style={{ textAlign: "left", margin: "4vw 1vw", fontFamily: "Montserrat" }}
+      className="skills"
+    >
+      <h4>SKILLS</h4>
+      <div className="skill-tag">
+        <h5>{skillsFormatted}</h5>
+      </div>
+    </div>
+  </>
+);
+
+const footer = (
+  <>
+    <small
+      style={{ textAlign: "left", margin: "4vw 1vw", fontFamily: "Montserrat" }}
+    >
+      Joined on Aug 20, 2020
+    </small>
+  </>
+);
+
+export default function App() {
+  return (
+    <div className="App">
+      {header}
+      {main}
+      {footer}
+    </div>
+  );
+}
+```
+
+**Live demo:** 
+
+[https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)
