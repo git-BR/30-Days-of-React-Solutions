@@ -1,12 +1,20 @@
-# Solutions for the 30 Days of React - Challenges made by Asabeneh
+<p align="center">
+  <img src="https://www.popwebdesign.net/popart_blog/wp-content/uploads/2018/03/reactjs.jpg">
+</p>
 
-## [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
+<h1 align="center">
+    🔧Solutions for the 30 Days of React <br>
+    (Challenges made by Asabeneh)
+</h1>
+
+
+## 🏁 [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
 
 > skip
 
-## [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
+## 🚩 [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
 
-## **Exercises: What is React?**
+## 🛠️ **Exercises: What is React?**
 
 1. What is React?
 
@@ -40,7 +48,7 @@
 
     > In React, A **Web App**, or simply Website, is a collection of Components which, together, can do many tasks like a Blog, Store Documents, Games...
 
-## **Exercises: Why React?**
+## 🛠️ **Exercises: Why React?**
 
 1. Why did you chose to use react?
 
@@ -54,7 +62,7 @@
 
     > skip
 
-## **Exercises: JSX**
+## 🛠️ **Exercises: JSX**
 
 1. What is an HTML element?
 
@@ -88,7 +96,7 @@
 
     > Babel, in this case, understands ECMAScript (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
 
-## **Exercises: JSX Elements**
+## 🛠️ **Exercises: JSX Elements**
 
 1. What is a JSX element?
 
@@ -133,7 +141,7 @@
           );
     ```
 
-## **Exercises: Inline Style**
+## 🛠️ **Exercises: Inline Style**
 
 1. Create a style object for the main JSX
 
@@ -161,19 +169,19 @@
 
 ---
 
-## **Exercises: Internal Styles**
+## 🛠️ **Exercises: Internal Styles**
 
 1. Apply different styles to your JSX elements
 
     > skip
 
-## **Exercise: Inject data to JSX**
+## 🛠️ **Exercise: Inject data to JSX**
 
 1. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
     > skip
 
-## [Day 3 - Setting Up](https://github.com/Asabeneh/30-Days-Of-React/blob/master/03_Day_Setting_Up/03_setting_up.md)
+## 🚩 [Day 3 - Setting Up](https://github.com/Asabeneh/30-Days-Of-React/blob/master/03_Day_Setting_Up/03_setting_up.md)
 
 ## **Exercises: Level 1**
 
@@ -217,7 +225,7 @@
 
 10. Try to make a different custom module in a different file and import it to index.js.
 
-## **Exercises: Level 2**
+## 🛠️ **Exercises: Level 2**
 
 1. Import and render the following images
 
@@ -320,7 +328,7 @@ export default function App() {
 
 [https://codesandbox.io/s/day-3-5dsrf](https://codesandbox.io/s/day-3-5dsrf)
 
-## **Exercises: Level 3**
+## 🛠️ **Exercises: Level 3**
 
 1. Design the following user card.
 
