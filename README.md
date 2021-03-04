@@ -1,5 +1,3 @@
-# 30 Days of React - Challenge Solutions
-
 Solutions of the 30 Days of React code challenges made by Asabeneh 
 
 ## [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
@@ -10,13 +8,13 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 ## [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
 
-### **Exercises: What is React?**
+## **Exercises: What is React?**
 
 ---
 
 1. What is React?
 
-    > React is a JavaScript library, developed by Facebook, to make Web UI Components
+    > **React** is a **JavaScript library**, developed by Facebook, to make **Web UI Components**
 
 2. What is a library?
 
@@ -40,13 +38,13 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 7. What is React Virtual DOM?
 
-    > Virtual DOM or VDOM is a technique to store a copy of the "Real DOM" in memory (like a virtual copy) that is syncronized with ReactDOM. This process is called reconciliation. VDOM is faster than traditional DOM.
+    > **Virtual DOM** or **VDOM** is a technique to store a copy of the "Real DOM" in memory (like a virtual copy) that is **synchronized** with **ReactDOM**. This process is called **reconciliation**. VDOM is **faster** than traditional DOM.
 
 8. What does a web application or a website(composed of) have?
 
-    > In React, A Web App, or simply Website, is a collection of Components which, together, can do many tasks like a Blog, Store Documents, Games...
+    > In React, A **Web App**, or simply Website, is a collection of Components which, together, can do many tasks like a Blog, Store Documents, Games...
 
-### **Exercises: Why React?**
+## **Exercises: Why React?**
 
 ---
 
@@ -62,13 +60,13 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
     > skip
 
-### **Exercises: JSX**
+## **Exercises: JSX**
 
 ---
 
 1. What is an HTML element?
 
-    > HTML attributes, as the name says, give attributes to HTML Elements for user interaction.
+    > HTML attributes, as the name says, give attributes to HTML **Elements** for user interaction.
 
     ```jsx
     <a href"#link to another place" ></a>
@@ -88,17 +86,17 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 4. What is JSX?
 
-    > JSX is the technique to write HTML inside React JavaScript code making developtment easier and faster.
+    > JSX is the **technique** to write HTML inside React JavaScript code making developtment easier and faster.
 
 5. What is babel?
 
-    > Babel is a transcompiler used in JavaScript.
+    > Babel is a **transcompiler** used in JavaScript.
 
 6. What is a transpiler?
 
-    > Babel, in this case, understands ECMAScript (JavaScript standard) and converts it to older JavaScript, thus, keep compatibility between engines and web browsers.
+    > Babel, in this case, understands ECMAScript (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
 
-### **Exercises: JSX Elements**
+## **Exercises: JSX Elements**
 
 ---
 
@@ -145,7 +143,7 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
           );
     ```
 
-### **Exercises: Inline Style**
+## **Exercises: Inline Style**
 
 ---
 
@@ -175,13 +173,13 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 ---
 
-### **Exercises: Internal Styles**
+## **Exercises: Internal Styles**
 
 1. Apply different styles to your JSX elements
 
     > skip
 
-### **Exercise: Inject data to JSX**
+## **Exercise: Inject data to JSX**
 
 1. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
@@ -189,21 +187,68 @@ Solutions of the 30 Days of React code challenges made by Asabeneh
 
 ---
 
-## Day 3 - Setting Up
+## [Day 3 - Setting Up](https://github.com/Asabeneh/30-Days-Of-React/blob/master/03_Day_Setting_Up/03_setting_up.md)
 
-### **Exercises: Level 1**
+## **Exercises: Level 1**
 
 ---
 
 1. What is a module?
+
+    > In React, a **module** enables **many or a single** function in your project by **importing or exporting** a new piece of code (a module) in your other JavaScript files
+
 2. What is package?
+
+    > A package is a single module (or multiples of them) **packed together** (see **NPM**) and **distributed** on the internet so others can install this package in their projects.
+
 3. What is the difference between a module and a package.
+
+    > A module is the piece of code which enables one or various functions. A package is just wrapped modules for easy distribution on the Internet.
+
 4. What is NPM?
+
+    > Is the package model of Node
+
 5. What is Webpack?
+
+    > It is a module **bundler** which store all of your **dependencies** in one place.
+
 6. How do you create a new React project?
+
+    > You can add **React** to your project linking React and **ReactDOM** via **CDN** link on your HTML file or by using the **automated create-react-app**.
+
 7. What are the files and folders inside a project folder(package.json, package-lock.json or yarn.lock, .gitignore,node_modules and public)?
+
+    > skip
+
 8. What is your favorite code editor (I believe that it is Visual Studio Code)?
+
+    > skip
+
 9. Add different Visual Studio Code extensions to improve your productivity(eg. prettier, ESLint etc).
+
+    > skip
+
 10. Try to make a different custom module in a different file and import it to index.js.
 
+    > skip
+
 ---
+
+## **Exercises: Level 2**
+
+---
+
+1. Import and render the following images
+
+    ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/frontend_technologies.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/frontend_technologies.png)
+
+2. Use h1, p, input and button HTML elements to create the following design using JSX
+
+![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/news_letter_design.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/news_letter_design.png)
+
+## **Exercises: Level 3**
+
+1. Design the following user card.
+
+![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/user_card_design_jsx.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/user_card_design_jsx.png)
