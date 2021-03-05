@@ -166,8 +166,6 @@
 
     > skip
 
----
-
 ## 🛠️ **Exercises: Internal Styles**
 
 1. Apply different styles to your JSX elements
@@ -447,7 +445,7 @@
     }
     ```
 
-    > **[Live demo: Day 3 LEVEL 3](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)** 🛰️
+    > 🛰️ **`LIVE DEMO`** **[day 3 - level 3](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)**
 
 # 🚩 [Day 4 - Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/04_Day_Components/04_components.md)
 
