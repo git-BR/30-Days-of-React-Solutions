@@ -9,7 +9,7 @@
 
 # 🏁 [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
 
-> skip
+> **`skip`**
 
 # 🚩 [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
 
@@ -25,7 +25,7 @@
 
 3. What is a single page application?
 
-    > Single-page application stands for just one HTML file to work with
+    > Single-page application stands for just one **`HTML`** file to work with
 
 4. What is a component ?
 
@@ -37,11 +37,11 @@
 
 6. What is DOM?
 
-    > DOM stands for Document Object Model. This Document connects web pages with scripts or programming languages.
+    > **`DOM`** stands for **Document Object Model**. This Document connects web pages with scripts or programming languages.
 
 7. What is React Virtual DOM?
 
-    > **Virtual DOM** or **VDOM** is a technique to store a copy of the "Real DOM" in memory (like a virtual copy) that is **synchronized** with **ReactDOM**. This process is called **reconciliation**. VDOM is **faster** than traditional DOM.
+    > **`Virtual DOM`** or **`VDOM`** is a technique to store a copy of the "Real DOM" in memory (like a virtual copy) that is **synchronized** with **ReactDOM**. This process is called **reconciliation**. **`VDOM`** is **faster** than traditional **`DOM`**.
 
 8. What does a web application or a website(composed of) have?
 
@@ -51,21 +51,21 @@
 
 1. Why did you chose to use react?
 
-    > skip
+    > **`skip`**
 
 2. What measures do you use to know popularity ?
 
-    > skip
+    > **`skip`**
 
 3. What is more popular, React or Vue ?
 
-    > skip
+    > **`skip`**
 
 ## 🛠️ **Exercises: JSX**
 
 1. What is an HTML element?
 
-    > HTML attributes, as the name says, give attributes to HTML **Elements** for user interaction.
+    > **`HTML attributes`**, as the name says, give attributes to **`HTML Elements`** for user interaction.
 
     ```jsx
     <a href"#link to another place" ></a>
@@ -85,21 +85,21 @@
 
 4. What is JSX?
 
-    > JSX is the **technique** to write HTML inside React JavaScript code making developtment easier and faster.
+    > **JSX** is the **technique** to write **`HTML`** inside React JavaScript code making development easier and faster.
 
 5. What is babel?
 
-    > Babel is a **transcompiler** used in JavaScript.
+    > **`Babel`** is a **transcompiler** used in JavaScript.
 
 6. What is a transpiler?
 
-    > Babel, in this case, understands ECMAScript (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
+    > **`Babel`**, in this case, understands **ECMAScript** (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
 
 ## 🛠️ **Exercises: JSX Elements**
 
 1. What is a JSX element?
 
-    > It the HTML element inside the React/JavaScript
+    > It the **`HTML`** element inside the React/JavaScript
 
     ```jsx
     const name = (
@@ -172,13 +172,13 @@
 
 1. Apply different styles to your JSX elements
 
-    > skip
+    > **`skip`**
 
 ## 🛠️ **Exercise: Inject data to JSX**
 
 1. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
-    > skip
+    > **`skip`**
 
 # 🚩 [Day 3 - Setting Up](https://github.com/Asabeneh/30-Days-Of-React/blob/master/03_Day_Setting_Up/03_setting_up.md)
 
@@ -186,43 +186,43 @@
 
 1. What is a module?
 
-    > In React, a **module** enables **many or a single** function in your project by **importing or exporting** a new piece of code (a module) in your other JavaScript files
+    > In React, a **`module`** enables **many or a single** function in your project by **importing or exporting** a new piece of code (a module) in your other JavaScript files
 
 2. What is package?
 
-    > A package is a single module (or multiples of them) **packed together** (see **NPM**) and **distributed** on the internet so others can install this package in their projects.
+    > A package is a single module (or multiples of them) **packed together** (see **`NPM`**) and **distributed** on the internet so others can install this package in their projects.
 
 3. What is the difference between a module and a package.
 
-    > A module is the piece of code which enables one or various functions. A package is just wrapped modules for easy distribution on the Internet.
+    > A **`module`** is the piece of code which enables one or various functions. A package is just wrapped modules for easy distribution on the Internet.
 
 4. What is NPM?
 
-    > Is the package model of Node
+    > Is the package model of **`Node`**
 
 5. What is Webpack?
 
-    > It is a module **bundler** which store all of your **dependencies** in one place.
+    > It is a **`module bundler`** which store all of your **`dependencies`** in one place.
 
 6. How do you create a new React project?
 
-    > You can add **React** to your project linking React and **ReactDOM** via **CDN** link on your HTML file or by using the **automated create-react-app**.
+    > You can add React to your project linking React and **`ReactDOM`** via **CDN** link on your **`HTML`** file or by using the **automated `create-react-app`**.
 
-7. What are the files and folders inside a project folder(package.json, package-lock.json or yarn.lock, .gitignore,node_modules and public)?
+7. What are the files and folders inside a project folder(**`package.json`**, **`package-lock.json`** or **`yarn.lock`**, **`.gitignore`**, **`node_modules`** and **`public`**)?
 
-    > skip
+    > **`skip`**
 
 8. What is your favorite code editor (I believe that it is Visual Studio Code)?
 
-    > skip
+    > **`skip`**
 
 9. Add different Visual Studio Code extensions to improve your productivity(eg. prettier, ESLint etc).
 
-    > skip
-
-    > skip
+    > **`skip`**
 
 10. Try to make a different custom module in a different file and import it to index.js.
+
+    > **`skip`**
 
 ## 🛠️ **Exercises: Level 2**
 
@@ -265,9 +265,7 @@
     );
     ```
 
-    **Live demo:** 
-
-    [https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js](https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js)
+    > 🛰️ **`LIVE DEMO`** **[day 3 - level 2.1](https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js)**
 
 2. Use h1, p, input and button HTML elements to create the following design using JSX
 
@@ -323,9 +321,7 @@
     }
     ```
 
-    **Live demo:** 
-
-    [https://codesandbox.io/s/day-3-5dsrf](https://codesandbox.io/s/day-3-5dsrf)
+    > 🛰️ **`LIVE DEMO`** **[day 3 - level 2.2](https://codesandbox.io/s/day-3-5dsrf)**
 
 ## 🛠️ **Exercises: Level 3**
 
@@ -451,10 +447,7 @@
     }
     ```
 
-    **Live demo:** 
-
-    [https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)
-
+    > **[Live demo: Day 3 LEVEL 3](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)** 🛰️
 
 # 🚩 [Day 4 - Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/04_Day_Components/04_components.md)
 
@@ -572,9 +565,7 @@
     }
     ```
 
-    **Live demo:** 
-
-    [https://codesandbox.io/s/day-6-level-21-2y0ub?file=/src/App.js:0-1094](https://codesandbox.io/s/day-6-level-21-2y0ub?file=/src/App.js:0-1094)
+    > 🛰️ **`LIVE DEMO`** **[day - 6 level 2.1](https://codesandbox.io/s/day-6-level-21-2y0ub?file=/src/App.js:0-1094)**
 
 2. Create the following hexadecimal colors using React component
 
@@ -626,9 +617,7 @@
     }
     ```
 
-    **Live demo:** 
-
-    [https://codesandbox.io/s/day-6-level-22-tooek?file=/src/App.js](https://codesandbox.io/s/day-6-level-22-tooek?file=/src/App.js)
+    > 🛰️ **`LIVE DEMO`** **[day - 6 level 2.2](https://codesandbox.io/s/day-6-level-22-tooek?file=/src/App.js)**
 
 ## **Exercises: Level 3**
 
@@ -714,9 +703,7 @@ const App = () => (
 export default App;
 ```
 
-**Live demo:** 
-
-[https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592](https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592)
+> 🛰️ **`LIVE DEMO`** **[day - 6 level 3.1](https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592)**
 
 # 🚩 [Day 7 - Class Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/07_Day_Class_Components/07_class_components.md)
 
@@ -777,6 +764,240 @@ Learn more about class based component by changing previous days exercises to cl
 1. Use React state to change the background of the page. You can use this technique to apply a dark mode for your portfolio.
 
     ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/08_day_changing_background_exercise.gif](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/08_day_changing_background_exercise.gif)
+
+    ```jsx
+    import React from "react";
+    import asabenehImage from "./images/asabeneh.jpg";
+
+    // Fuction to show month date year
+
+    // User Card Component
+    const UserCard = ({ user: { firstName, lastName, image } }) => (
+      <div className="user-card">
+        <img src={image} alt={firstName} />
+        <h2>
+          {firstName}
+          {lastName}
+        </h2>
+      </div>
+    );
+
+    // A button component
+    const Button = ({ text, onClick, style }) => (
+      <button style={style} onClick={onClick}>
+        {text}
+      </button>
+    );
+
+    // CSS styles in JavaScript Object
+    const buttonStyles = {
+      backgroundColor: "#61dbfb",
+      padding: 10,
+      border: "none",
+      borderRadius: 5,
+      margin: 3,
+      cursor: "pointer",
+      fontSize: 18,
+      color: "white"
+    };
+
+    // class based component
+    class Header extends React.Component {
+      render() {
+        console.log(this.props.data);
+        const {
+          welcome,
+          title,
+          subtitle,
+          author: { firstName, lastName },
+          date
+        } = this.props.data;
+
+        return (
+          <header style={this.props.styles}>
+            <div className="header-wrapper">
+              <h1>{welcome}</h1>
+              <h2>{title}</h2>
+              <h3>{subtitle}</h3>
+              <p>
+                {firstName} {lastName}
+              </p>
+              <small>{date}</small>
+            </div>
+          </header>
+        );
+      }
+    }
+
+    const Count = ({ count, addOne, minusOne }) => (
+      <div>
+        <h1>{count} </h1>
+        <div>
+          <Button text="+1" onClick={addOne} style={buttonStyles} />
+          <Button text="-1" onClick={minusOne} style={buttonStyles} />
+        </div>
+      </div>
+    );
+
+    // TechList Component
+    // class base component
+    class TechList extends React.Component {
+      render() {
+        const { techs } = this.props;
+        const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+        return techsFormatted;
+      }
+    }
+
+    // Main Component
+    // Class Component
+    class Main extends React.Component {
+      render() {
+        const {
+          techs,
+          user,
+          greetPeople,
+          handleTime,
+          changeBackground,
+          count,
+          addOne,
+          minusOne
+        } = this.props;
+        return (
+          <main>
+            <div className="main-wrapper">
+              <p>Prerequisite to get started react.js:</p>
+              <ul>
+                <TechList techs={techs} />
+              </ul>
+              <UserCard user={user} />
+              <Button
+                text="Greet People"
+                onClick={greetPeople}
+                style={buttonStyles}
+              />
+              <Button text="Show Time" onClick={handleTime} style={buttonStyles} />
+              <Button
+                text="Change Background"
+                onClick={changeBackground}
+                style={buttonStyles}
+              />
+              <Count count={count} addOne={addOne} minusOne={minusOne} />
+            </div>
+          </main>
+        );
+      }
+    }
+
+    // Footer Component
+    // Class component
+    class Footer extends React.Component {
+      render() {
+        return (
+          <footer>
+            <div className="footer-wrapper">
+              <p>Copyright {this.props.date.getFullYear()}</p>
+            </div>
+          </footer>
+        );
+      }
+    }
+
+    class App extends React.Component {
+      state = {
+        count: 0,
+        styles: {
+          backgroundColor: "white",
+          color: "black"
+        }
+      };
+      showDate = (time) => {
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ];
+
+        const month = months[time.getMonth()].slice(0, 3);
+        const year = time.getFullYear();
+        const date = time.getDate();
+        return ` ${month} ${date}, ${year}`;
+      };
+      addOne = () => {
+        this.setState({ count: this.state.count + 1 });
+      };
+
+      // method which subtract one to the state
+      minusOne = () => {
+        this.setState({ count: this.state.count - 1 });
+      };
+      handleTime = () => {
+        alert(this.showDate(new Date()));
+      };
+      greetPeople = () => {
+        alert("Welcome to 30 Days Of React Challenge, 2020");
+      };
+      changeBackground = () => {
+        const colorChange =
+          this.state.styles.backgroundColor === "white"
+            ? this.setState({
+                styles: { backgroundColor: "black", color: "white" }
+              })
+            : this.setState({
+                styles: { backgroundColor: "white", color: "black" }
+              });
+
+        this.setState({ colorChange });
+      };
+
+      render() {
+        const data = {
+          welcome: "Welcome to 30 Days Of React",
+          title: "Getting Started React",
+          subtitle: "JavaScript Library",
+          author: {
+            firstName: "Asabeneh",
+            lastName: "Yetayeh"
+          },
+          date: "Oct 7, 2020"
+        };
+        const techs = ["HTML", "CSS", "JavaScript"];
+        const date = new Date();
+        // copying the author from data object to user variable using spread operator
+        const user = { ...data.author, image: asabenehImage };
+
+        return (
+          <div className="app" style={this.state.styles}>
+            <Header data={data} />
+            <Main
+              user={user}
+              techs={techs}
+              handleTime={this.handleTime}
+              greetPeople={this.greetPeople}
+              changeBackground={this.changeBackground}
+              addOne={this.addOne}
+              minusOne={this.minusOne}
+              count={this.state.count}
+            />
+            <Footer date={new Date()} />
+          </div>
+        );
+      }
+    }
+
+    export default App;
+    ```
+
+    > 🛰️ **`LIVE DEMO`** **[day - 8 level 2.1](https://codesandbox.io/s/day-8-level-21-q605x)**
 
 2. After long time of lock down, you may think of travelling and you do not know where to go. You may be interested to develop a random country selector that selects your holiday destination.
 
@@ -925,6 +1146,4 @@ Learn more about class based component by changing previous days exercises to cl
     export default App;
     ```
 
-    **Live demo:** 
-
-    [https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436](https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436)
+    > 🛰️ **`LIVE DEMO`** **[day - 8 level 2.2](https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436)**
