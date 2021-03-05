@@ -455,11 +455,12 @@
 
     [https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)
 
-# 🚩 Day 4 - Components
+
+# 🚩 [Day 4 - Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/04_Day_Components/04_components.md)
 
 > skip (similar projects already done)
 
-# 🚩 Day 5 - Props
+# 🚩 [Day 5 - Props](https://github.com/Asabeneh/30-Days-Of-React/blob/master/05_Day_Props/05_props.md)
 
 ## **Exercises: Level 1**
 
@@ -487,7 +488,7 @@
 
 > skip (similar projects already done)
 
-# 🚩 Day 6 - Mapping arrays
+# 🚩 [Day 6 - List, Map and Keys](https://github.com/Asabeneh/30-Days-Of-React/blob/master/06_Day_Map_List_Keys/06_map_list_keys.md)
 
 ## **Exercises: Level 1**
 
@@ -716,3 +717,214 @@ export default App;
 **Live demo:** 
 
 [https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592](https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592)
+
+# 🚩 [Day 7 - Class Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/07_Day_Class_Components/07_class_components.md)
+
+## **Exercises: Level 1**
+
+1. How do you write a pure JavaScript function
+2. What is inheritance and how do you make a child from a parent class?
+3. What is class based React component ?
+4. What is the difference between functional React component and class based React component ?
+5. When do we need to use class based components instead of functional components
+6. What is the use cases of class based component ?
+7. Which type of component do use most frequently ? functional or class-based component
+8. What is React life cycle ? (not covered yet) ?
+9. What is state in React ? (not covered yet)
+
+## **Exercises: Level 2**
+
+Learn more about class based component by changing previous days exercises to class based components
+
+> skip
+
+# 🚩 [Day 8 - States](https://github.com/Asabeneh/30-Days-Of-React/blob/master/08_Day_States/08_states.md)
+
+### **Exercises: Level 1**
+
+1. What was your state today? Are you happy? I hope so. If you manage to make it this far you should be happy.
+
+    > skip
+
+2. What is state in React ?
+
+    > In React, **state** is a **object** which store the **state changes** in Components and **update** (re-render) them when necessary.
+
+3. What is the difference between props and state in React ?
+
+    > In React props are relative to Component Properties and have the same functionally as JavaScript **paramenters** to pass data from a Component to Another like a **data carrier**. Thus, it has a **different function** than state which just store React State changes
+
+4. How do you access state in a React component ?
+
+    > You can access React State by using the keyword ***this***
+
+    ```jsx
+    // LIKE SO
+    accessState: this.state
+    ```
+
+5. How do you set a state in a React component ?
+
+    > You can set a state in React by using this.setState
+
+    ```jsx
+    // LIKE SO
+    stateSetter = this.setState()
+    ```
+
+### **Exercises: Level 2**
+
+1. Use React state to change the background of the page. You can use this technique to apply a dark mode for your portfolio.
+
+    ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/08_day_changing_background_exercise.gif](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/08_day_changing_background_exercise.gif)
+
+2. After long time of lock down, you may think of travelling and you do not know where to go. You may be interested to develop a random country selector that selects your holiday destination.
+
+    ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/08_day_select_country_exercise.gif](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/08_day_select_country_exercise.gif)
+
+    ```jsx
+    import React from "react";
+    import "./App.css";
+    import { countriesData } from "./data/countries";
+
+    class Header extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+
+      render() {
+        const {
+          flag,
+          name,
+          capital,
+          language,
+          population,
+          currency
+        } = this.props.country;
+
+        const {
+          welcome,
+          title,
+          subtitle,
+          author: { firstName, lastName },
+          date
+        } = this.props.data;
+
+        return (
+          <>
+            <header align="center" style={this.props.styles}>
+              <div className="header-wrapper">
+                <h1>{welcome}</h1>
+                <h2>{title}</h2>
+                <h3>{subtitle}</h3>
+                <p>
+                  {firstName} {lastName}
+                </p>
+                <small>{date}</small>
+              </div>
+            </header>
+
+            <main align="center">
+              <div
+                style={{
+                  padding: "2vw",
+                  boxShadow: "3px 3px 3px rgba(0,0,0,0.3)",
+                  backgroundColor: "#f2fac2",
+                  borderRadius: "1vw",
+                  width: "70%"
+                }}
+                className="header-wrapper"
+              >
+                <img
+                  style={{
+                    width: "30vw",
+                    boxShadow: "3px 3px 3px rgba(0,0,0,0.3)"
+                  }}
+                  src={flag}
+                  alt="flag"
+                />
+                <h1>{name}</h1>
+                <ul align="left" className="details">
+                  <strong>Capital: </strong> <span>{capital}</span>
+                  <br />
+                  <strong>Language: </strong> <span>{language}</span>
+                  <br />
+                  <strong>Population: </strong> <span>{population}</span>
+                  <br />
+                  <strong>Currency: </strong> <span>{currency}</span>
+                </ul>
+              </div>
+            </main>
+          </>
+        );
+      }
+    }
+
+    const buttonStyles = {
+      cursor: "pointer",
+      backgroundColor: "#61dbfb",
+      border: "none",
+      padding: "1vw",
+      borderRadius: "1vw",
+      color: "white",
+      textShadow: "1px 1px 1px rgba(0, 0, 0,0.3)",
+      fontSize: "calc(1.5vw + 1vmin)"
+    };
+
+    const ButtonRandom = ({ onClick, text }) => (
+      <button style={buttonStyles} onClick={onClick}>
+        {text}
+      </button>
+    );
+
+    class App extends React.Component {
+      state = {
+        countryState: Math.floor(Math.random() * countriesData.length)
+      };
+
+      render() {
+        const data = {
+          welcome: "Welcome to 30 Days Of React",
+          title: "Getting Started React",
+          subtitle: "JavaScript Library",
+          author: {
+            firstName: "Asabeneh",
+            lastName: "Yetayeh"
+          },
+          date: "Oct 7, 2020"
+        };
+
+        function random() {
+          return Math.floor(Math.random() * countriesData.length);
+        }
+
+        const country = {
+          flag: countriesData[this.state.countryState].flag,
+          name: countriesData[this.state.countryState].name,
+          capital: countriesData[this.state.countryState].capital,
+          language: countriesData[this.state.countryState].languages
+            .toString()
+            .split(",")
+            .join(", "),
+          population: countriesData[this.state.countryState].population,
+          currency: countriesData[this.state.countryState].currency
+        };
+
+        return (
+          <div style={{ height: "1500px" }} align="center">
+            <Header data={data} country={country} />
+            <ButtonRandom
+              onClick={() => this.setState({ countryState: random() })}
+              text="Random Country"
+            />
+          </div>
+        );
+      }
+    }
+
+    export default App;
+    ```
+
+    **Live demo:** 
+
+    [https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436](https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436)
