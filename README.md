@@ -1392,3 +1392,97 @@ Learn more about class based component by changing previous days exercises to cl
         ```
 
         > 🛰️ **`LIVE DEMO`** [day - 9 level 3](https://codesandbox.io/s/day-9-level-3-b1tyn?file=/src/App.js)
+
+        # 🚩 [Day 10 - React Project Folder Structure](https://github.com/Asabeneh/30-Days-Of-React/blob/master/10_React_Project_Folder_Structure/10_react_project_folder_structure.md)
+
+        ## **Exercises:Level 1**
+
+        1. What is the importance of React Folder Structure and File Naming
+        2. How do you export file
+        3. How do you import file
+        4. Make a component of module and export it as named or default export
+        5. Make a component or module and import it
+        6. Change all the components you have to different folder structure
+
+        ## **Exercises:Level 2**
+
+        1. Make a simple portfolio using the components we have created so far. Implement a dark mode by using the function we wrote on day 8 challenge.
+
+        # 🚩 [Day 11 - Events](https://github.com/Asabeneh/30-Days-Of-React/blob/master/11_Day_Events/11_events.md)
+
+        ## **Exercises: Level 1**
+
+        1. What is an event?
+        2. What is the different between an HTML element event and React event?
+        3. Write at least 4 keyboard events?
+        4. Write at least 8 mouse events?
+        5. What are the most common mouse and keyboard events?
+        6. Write an event specific to input element?
+        7. Write an event specific to form element?
+        8. Display the coordinate of the view port when a mouse is moving on the body?
+        9. What is the difference between onInput, onChange and onBlur?
+        10. Where do we put the onSubmit event ?
+
+        ## **Exercises: Level 2**
+
+        Implement the following using onMouseEnter event
+
+        ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/react_event_on_mouse_enter.gif](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/react_event_on_mouse_enter.gif)
+
+        ```jsx
+        import { Component } from "react";
+        import "./styles.css";
+
+        const CatchMe = ({ style, mouseEnter }) => {
+          return (
+            <div style={style} onMouseEnter={mouseEnter}>
+              <h1>CATCH ME</h1>
+            </div>
+          );
+        };
+
+        class App extends Component {
+          state = {
+            style: {
+              display: "grid",
+              placeItems: "center",
+              placeContent: "center",
+              backgroundColor: "orange",
+              height: "100vh"
+            },
+            blockState: {
+              display: "absolute",
+              backgroundColor: "rgba(255,255,255,0.25)",
+              color: "aliceblue",
+              padding: "1em 4em",
+              borderRadius: "8px",
+              transform: ""
+            }
+          };
+          handleMouseEnter = (e) => {
+            console.log(e.target);
+            this.setState({
+              blockState: {
+                ...this.state.blockState,
+                transform: `translate(${Math.round(Math.random() * 50)}vw,
+                 ${Math.round(Math.random() * -50)}vh)`
+              }
+            });
+          };
+
+          render() {
+            return (
+              <div style={this.state.style} className="App">
+                <CatchMe
+                  style={this.state.blockState}
+                  mouseEnter={this.handleMouseEnter}
+                />
+              </div>
+            );
+          }
+        }
+
+        export default App;
+        ```
+
+        > 🛰️ **`LIVE DEMO`** [day - 11 level 2](https://codesandbox.io/s/day-11-level-2-5geom?file=/src/App.js:0-1118)
