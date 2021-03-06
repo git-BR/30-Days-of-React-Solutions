@@ -7,6 +7,8 @@
     (Challenges made by Asabeneh)
 </h1>
 
+> I'm taking this 30 days of React challenge to test my React skills while enjoying the reviewing process. Please note that the answers here follow the same pace as it was originally intended by its creator (Asabeneh Yeatayeh). That means that the answers follow the beginner to advanced, so I will avoid using advanced React knowledge (like Hooks, Suspense, etc) in beginner challenges.
+
 # 🏁 [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
 
 > **`skip`**
@@ -263,7 +265,7 @@
     );
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day 3 - level 2.1](https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js)**
+    > 🛰️ **`LIVE DEMO`** [day 3 - level 2.1](https://codesandbox.io/s/day-3-dcfhb?file=/src/App.js)
 
 2. Use h1, p, input and button HTML elements to create the following design using JSX
 
@@ -319,7 +321,7 @@
     }
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day 3 - level 2.2](https://codesandbox.io/s/day-3-5dsrf)**
+    > 🛰️ **`LIVE DEMO`** [day 3 - level 2.2](https://codesandbox.io/s/day-3-5dsrf)
 
 ## 🛠️ **Exercises: Level 3**
 
@@ -445,7 +447,7 @@
     }
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day 3 - level 3](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)**
+    > 🛰️ **`LIVE DEMO`** [day 3 - level 3](https://codesandbox.io/s/shy-surf-8xbd8?file=/src/App.js)
 
 # 🚩 [Day 4 - Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/04_Day_Components/04_components.md)
 
@@ -563,7 +565,7 @@
     }
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day - 6 level 2.1](https://codesandbox.io/s/day-6-level-21-2y0ub?file=/src/App.js:0-1094)**
+    > 🛰️ **`LIVE DEMO`** [day - 6 level 2.1](https://codesandbox.io/s/day-6-level-21-2y0ub?file=/src/App.js:0-1094)
 
 2. Create the following hexadecimal colors using React component
 
@@ -615,7 +617,7 @@
     }
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day - 6 level 2.2](https://codesandbox.io/s/day-6-level-22-tooek?file=/src/App.js)**
+    > 🛰️ **`LIVE DEMO`** [day - 6 level 2.2](https://codesandbox.io/s/day-6-level-22-tooek?file=/src/App.js)
 
 ## **Exercises: Level 3**
 
@@ -701,7 +703,7 @@ const App = () => (
 export default App;
 ```
 
-> 🛰️ **`LIVE DEMO`** **[day - 6 level 3.1](https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592)**
+> 🛰️ **`LIVE DEMO`** [day - 6 level 3.1](https://codesandbox.io/s/day-6-level-3-k6zo7?file=/src/App.js:0-1592)
 
 # 🚩 [Day 7 - Class Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/07_Day_Class_Components/07_class_components.md)
 
@@ -995,7 +997,7 @@ Learn more about class based component by changing previous days exercises to cl
     export default App;
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day - 8 level 2.1](https://codesandbox.io/s/day-8-level-21-q605x)**
+    > 🛰️ **`LIVE DEMO`** [day - 8 level 2.1](https://codesandbox.io/s/day-8-level-21-q605x)
 
 2. After long time of lock down, you may think of travelling and you do not know where to go. You may be interested to develop a random country selector that selects your holiday destination.
 
@@ -1144,4 +1146,249 @@ Learn more about class based component by changing previous days exercises to cl
     export default App;
     ```
 
-    > 🛰️ **`LIVE DEMO`** **[day - 8 level 2.2](https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436)**
+    > 🛰️ **`LIVE DEMO`** [day - 8 level 2.2](https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436)
+
+    # 🚩 [Day 9 - Conditional Rendering](https://github.com/Asabeneh/30-Days-Of-React/blob/master/09_Day_Conditional_Rendering/09_conditional_rendering.md)
+
+    ## **Exercises: Level 1**
+
+    1. What is conditional rendering?
+
+        > Conditional rendering consists in display something on computer screen based in `true` or `false` conditions
+
+    2. How do you implement conditional rendering?
+
+        > Using regular `if` and `else` statements and ternary operators like `&&`
+
+    3. Which method of conditional rendering do you prefer to use?
+
+        > Ternary Operators
+
+    ## **Exercises: Level 2**
+
+    1. Make a single page application which changes the body of the background based on the season of the year(Autumn, Winter, Spring, Summer)
+
+        ```jsx
+        import React from "react";
+
+        class Main extends React.Component {
+          render() {
+            const { style, month, season, text } = this.props;
+            return (
+              <div align="center" style={style}>
+                <section
+                  style={{
+                    placeContent: "center",
+                    alignContent: "center",
+                    display: "grid"
+                  }}
+                >
+                  {month}
+                  <h1>{season}</h1>
+                  {text}
+                </section>
+              </div>
+            );
+          }
+        }
+
+        class App extends React.Component {
+          //  INITAL STATE OF THE EVENTS
+          state = {
+            season: "SEASON",
+            style: {
+              backgroundColor: "gold",
+              height: "100vh",
+              display: "grid",
+              fontSize: "4vw"
+            }
+          };
+
+          showDate = (time) => {
+            const months = [
+              "January", // 0
+              "February", // 1
+              "March", // 2
+              "April", // 3
+              "May", // 4
+              "June", // 5
+              "July", // 6
+              "August", // 7
+              "September", // 8
+              "October", // 9
+              "November", // 10
+              "December" // 11
+            ];
+
+            const month = months[time.getMonth()];
+
+            return month;
+          };
+          handleSeason = (month) => {
+            const autumn = ["September", "October", "November"];
+            const winter = ["December", "January", "February"];
+            const spring = ["March", "April", "May"];
+            const summer = ["June", "July", "August"];
+
+            console.log(month);
+            console.log(autumn.some((item) => item.includes(month)));
+
+            let season = autumn.some((item) => item.includes(month))
+              ? "AUTUMN"
+              : winter.some((item) => item.includes(month))
+              ? "WINTER"
+              : spring.some((item) => item.includes(month))
+              ? "SPRING"
+              : summer.some((item) => item.includes(month))
+              ? "SUMMER"
+              : null;
+
+            return season;
+          };
+
+          render() {
+            return (
+              <>
+                <Main
+                  style={this.state.style}
+                  month={this.showDate(new Date())}
+                  season={this.handleSeason(this.showDate(new Date()))}
+                  text={this.state.season}
+                />
+              </>
+            );
+          }
+        }
+
+        export default App;
+        ```
+
+        > 🛰️ **`LIVE DEMO`** [day 9 - level 2.1](https://codesandbox.io/s/day-9-level-21-iz0qz?file=/src/App.js:0-1989)
+
+    2. Make a single page application which change the body of the background based on the time of the day(Morning, Noon, Evening, Night)
+
+        ```jsx
+        import React from "react";
+
+        class Main extends React.Component {
+          render() {
+            const { style, time, text } = this.props;
+            return (
+              <div align="center" style={style}>
+                <section
+                  style={{
+                    placeContent: "center",
+                    alignContent: "center",
+                    display: "grid"
+                  }}
+                >
+                  <strong>{time}</strong>
+                  <h1>{text}</h1>
+                </section>
+              </div>
+            );
+          }
+        }
+
+        class App extends React.Component {
+          //  INITAL STATE OF THE EVENTS
+          state = {
+            hour: `Time: ${new Date().getHours()} hours`,
+            date: new Date().getHours(),
+            style: {
+              backgroundColor:
+                (new Date().getHours() > 6 && new Date().getHours()) < 12
+                  ? "lightyellow"
+                  : (new Date().getHours() > 12 && new Date().getHours()) < 18
+                  ? "lightcyan"
+                  : (new Date().getHours() > 18 && new Date().getHours()) < 22
+                  ? "midnightblue"
+                  : "black",
+              color: new Date().getHours() > 18 ? "white" : "black",
+              height: "100vh",
+              display: "grid",
+              fontSize: "4vw"
+            }
+          };
+
+          handleTime = () => {
+            const hour =
+              (this.state.date > 6 && this.state.date) < 12
+                ? "MORNING"
+                : (this.state.date > 12 && this.state.date) < 18
+                ? "NOON"
+                : (this.state.date > 18 && this.state.date) < 22
+                ? "EVENING"
+                : "NIGHT";
+
+            return hour;
+          };
+
+          render() {
+            return (
+              <>
+                <Main
+                  style={this.state.style}
+                  time={this.state.hour}
+                  text={this.handleTime()}
+                />
+              </>
+            );
+          }
+        }
+
+        export default App;
+        ```
+
+        > 🛰️ **`LIVE DEMO`** [day 9 - level 2.2](https://codesandbox.io/s/day-9-level-22-9xr8e?file=/src/App.js:0-1603)
+
+    ## **Exercises: Level 3**
+
+    1. Fetching data takes some amount of time. A user has to wait until the data get loaded. Implement a loading functionality of a data is not fetched yet. You can simulate the delay using setTimeout.
+
+        ```jsx
+        import React from "react";
+        import "./styles.css";
+
+        const url =
+          "https://gateway.marvel.com/v1/public/comics?ts=128&apikey=171e1910640a20fe5dd9db069ebb5d51&hash=b3d3c016b3897b06142dec1193146b5b";
+
+        class App extends React.Component {
+          state = {
+            loading: true,
+            image: null,
+            title: null
+          };
+
+          async componentDidMount() {
+            const request = await fetch(url);
+            const response = await request.json();
+            const random = Math.floor(Math.random() * response.data.results.length);
+
+            this.setState({
+              loading: false,
+              image: (
+                <img
+                  style={{ width: "32vw" }}
+                  src={`${response.data.results[random].thumbnail.path}.jpg`}
+                  alt={"thumb"}
+                />
+              ),
+              title: <h2>{response.data.results[random].title}</h2>
+            });
+          }
+
+          render() {
+            return (
+              <div className="App">
+                {this.state.loading ? <h1>LOADING...</h1> : this.state.image}
+                {this.state.title}
+              </div>
+            );
+          }
+        }
+
+        export default App;
+        ```
+
+        > 🛰️ **`LIVE DEMO`** [day - 9 level 3](https://codesandbox.io/s/day-9-level-3-b1tyn?file=/src/App.js)
