@@ -1485,4 +1485,4 @@ Learn more about class based component by changing previous days exercises to cl
         export default App;
         ```
 
-        > 🛰️ **`LIVE DEMO`** [day - 10 level 2](https://codesandbox.io/s/day-11-level-2-5geom?file=/src/App.js:0-1118)
+        > 🛰️ **`LIVE DEMO`** [day - 11 level 2](https://codesandbox.io/s/day-11-level-2-5geom?file=/src/App.js:0-1118)
