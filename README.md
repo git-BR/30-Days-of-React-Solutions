@@ -9,6 +9,7 @@
 
 > I'm taking this 30 days of React challenge to test my React skills while enjoying the reviewing process. Please note that the answers here follow the same pace as it was originally intended by its creator (Asabeneh Yeatayeh). That means that the answers follow the beginner to advanced, so I will avoid using advanced React knowledge (like Hooks, Suspense, etc) in beginner challenges.
 
+
 # 🏁 [Day 1 - JavaScript Refresher](https://github.com/Asabeneh/30-Days-Of-React/blob/master/01_Day_JavaScript_Refresher/01_javascript_refresher.md)
 
 > **`skip`**
@@ -1398,11 +1399,48 @@ Learn more about class based component by changing previous days exercises to cl
         ## **Exercises:Level 1**
 
         1. What is the importance of React Folder Structure and File Naming
+
+            > It keeps the development organized and easier to maintain by you, your team and the other people that will review your code base.
+
         2. How do you export file
+
+            > We need to write `export` or `export default` before the Component, Function or Variable.
+
         3. How do you import file
+
+            > We need to write `import` before the Component, Function or Variable you want to import and `from './filePath'` after to find your file path.
+
         4. Make a component of module and export it as named or default export
+
+            ```jsx
+            import React, { Component } from 'react'
+
+            class App extends Component {
+            	// code goes here
+            }
+
+            export default App
+            ```
+
         5. Make a component or module and import it
+
+            ```jsx
+            import React, { Component } from 'react'
+
+            class App extends Component {
+            	// code goes here
+            }
+
+            export default App
+
+            ...
+
+            import App from './filePath'
+            ```
+
         6. Change all the components you have to different folder structure
+
+            > `skip`
 
         ## **Exercises:Level 2**
 
@@ -1413,15 +1451,75 @@ Learn more about class based component by changing previous days exercises to cl
         ## **Exercises: Level 1**
 
         1. What is an event?
+
+            > A `event` are the events which occur on the `DOM`  when some code is **triggered** by **inputs** (like **keyboard, mouse and touchscreen)**.
+
         2. What is the different between an HTML element event and React event?
+
+            > React `event` are written with camelCase to differ from the `HTML event`
+
         3. Write at least 4 keyboard events?
+
+            > `onKeyDown`, `onKeyPress`, `onKeyUp` and `onCopy`
+
         4. Write at least 8 mouse events?
+
+            > `onMouseDown`, `onMouseUp`, `onMouseEnter`, `onMouseLeave`, `onMouseMove`, `onMouseOut`, `onMouseOver` and `onMouseWheel`.
+
         5. What are the most common mouse and keyboard events?
+
+            > `onMouseMove`, `onMouseEnter`, `onMouseLeave`, `onMouseOut`, `onClick`, `onKeyDown`, `onKeyPress`, `onKeyUp`, `onCopy`, `onCut`, `onDrag`, `onChange`, `onBlur`, `onInput` and`onSubmit.`
+
         6. Write an event specific to input element?
+
+            ```jsx
+            handleClick = (e) => {
+            	e.target.click ? 'CLICKED' : ''
+            }
+            ```
+
         7. Write an event specific to form element?
+
+            ```jsx
+            handleChange = (e) => {   
+              const { name, value } = e.target
+                
+              this.setState({ [name]: value })
+            }
+            ```
+
         8. Display the coordinate of the view port when a mouse is moving on the body?
+
+            ```jsx
+            class App extends React.Component {
+              state = {
+                x: 0,
+                y: 0
+              }
+              handleMouseMove = (e) => {
+                this.setState({x: e.screenX, y: e.screenY})
+              }
+
+              render() {
+                const {x, y} = this.state
+                return (
+                  <>
+                    <div style={{height: '100vh'}} onMouseMove={this.handleMouseMove}>
+                      <h2> Mouse coordinates: {x} {y} </h2>
+                    </div>
+                  </>
+                )
+              }
+            }
+            ```
+
         9. What is the difference between onInput, onChange and onBlur?
+
+            > `onInput` we have the inputs from user, generally inside a form. `onChange` is triggered when a change is detected in the **Component** **state**. `onBlur` is triggered when the user leaves `focus` of the **Component**.
+
         10. Where do we put the onSubmit event ?
+
+            > When we need to catch the typed inputs by user inside a `form` or a `button`.
 
         ## **Exercises: Level 2**
 
@@ -1486,3 +1584,115 @@ Learn more about class based component by changing previous days exercises to cl
         ```
 
         > 🛰️ **`LIVE DEMO`** [day - 11 level 2](https://codesandbox.io/s/day-11-level-2-5geom?file=/src/App.js:0-1118)
+
+        # 🚩 [Day 12 - Forms](https://github.com/Asabeneh/30-Days-Of-React/blob/master/12_Day_Forms/12_forms.md)
+
+        ## **Exercises: Level 1**
+
+        1. What is the importance of form?
+
+            > `form` is important to store **user information** or **details** of any sort for later use.
+
+        2. How many input types do you know?
+
+            > `skip`
+
+        3. Mention at least four attributes of an input element
+
+            > `type`, `name`, `placeholder` and `value`.
+
+        4. What is the importance of htmlFor?
+
+            > We use `htmlFor` to specify which element we want to `label`.
+
+        5. Write an input type which is not given in the example if there is?
+
+            > `skip`
+
+        6. What is a controlled input?
+
+            > Is a `input` controlled by React `state`.
+
+        7. What do you need to write a controlled input?
+
+            > To store information in a `state` for later use.
+
+        8. What event type do you use to listen changes on an input field?
+
+            > `onInput`
+
+        9. What is the value of a checked checkbox?
+
+            > `true`
+
+        10. When do you use onChange, onBlur, onSubmit?
+
+            > When we need to capture **state changes**, when we need to trigger **mouse leaving** the specified area and when we need to **store user typed data**.
+
+        11. What is the purpose of writing e.preventDefault() inside the submit handler method?
+
+            > To prevent the **default** behaviour of **refreshing** every time.
+
+        12. How do you bind data in React? The first input field example is data binding in React.
+
+            > We can bind data by using `state` to store the value and `onChange` to change the value `state`.
+
+        13. What is validation?
+
+            > Is the process to **check** if the user followed the given **rules**.
+
+        14. What is the event type you use to listen when an input changes?
+
+            > `onChange`
+
+        15. What are event types do you use to validate an input?
+
+            > the **HTML5** built-in validation or using a **Regular Expression**.
+
+        ## **Exercises: Level 2**
+
+        1. Validate the form given above (a gif image or a video will be provided later). First try to validate without using any library then try it with [validator.js](https://www.npmjs.com/package/validator).
+
+        > 🛰️ **`LIVE DEMO`** day - 12 level 2
+
+        ## **Exercises: Level 1**
+
+        1. What is component life cycles
+
+            > Component life cycles are the process of **rendering** a **React Component** on the `DOM` and consists of 3 basic steps: **mounting**, **updating** and **unmounting.**
+
+        2. What is the purpose of life cycles
+
+            > Draw UI Components on the `DOM` according to life cycles rules: **mounting**, **updating** and **unmounting**.
+
+        3. What are the three stages of a component life cycle
+
+            > **Mounting**, **updating** and **unmounting**.
+
+        4. What does mounting means?
+
+            > Mounting is the **initial** step that React follows to render components on the `DOM`
+
+        5. What does updating means
+
+            > Updating is the **second** step which returns a `boolean`. If `true` it will **re-render** the specified Component. If `false` it will never re-render, or **updating.**
+
+        6. What does unmounting means?
+
+            > It is the **last** step in which React understands that the Component life cycle it's done.
+
+        7. What is the most common built-in mounting life cycle method?
+
+            > The `render()` method.
+
+        8. What are the mounting life cycle methods?
+
+            > `constructor()`, `static getStateDerivedFromProps()`, `render()`, `componentDidMount()`.
+
+        9. What are the updating life cycle methods?
+
+            > `static getStateDerivedFromProps()`, `shouldComponentUpdate()`, `render()`, `getSnapshotBeforeUpdate()`, `componentDidUpdate()`.
+
+        10. What is the unmounting life cycle method?
+
+            > As the unmounting is the last step in the chain it needs only the final method of `componentWillUnmount()`.
