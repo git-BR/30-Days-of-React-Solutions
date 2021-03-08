@@ -1748,20 +1748,140 @@ export default App;
 ## **Exercises: Level 1**
 
 1. What is a package?
+
+    > 
+
 2. What is a third party package ?
+
+    > 
+
 3. Do you have to use third party packages?
+
+    > 
+
 4. How do you know the popularity and stability of a third party package?
+
+    > 
+
 5. How many JavaScript packages are there on the npm registry?
+
+    > 
+
 6. How do you install a third party package?
+
+    > 
+
 7. What packages do you use most frequently?
+
+    > 
+
 8. What package do you use to fetch data?
+
+    > 
+
 9. What is the purpose of classnames package?
+
+    > 
+
 10. What is the pupose validator package?
+
+    > 
 
 ## **Exercises: Level 2**
 
 1. Learn how to use Sass
+
+    > 
+
 2. Learn how to use axios
+
+    > 
+
 3. Learn how to use moment and react-icons
+
+    > 
+
 4. Use the validator package to validate the form you had in day 12
+
+    > 
+
 5. Use classnames to change a class based on some logic.
+
+    > 
+
+# 🚩 [Day 16 - Higher Order Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/16_Higher_Order_Component/16_higher_order_component.md)
+
+## **Exercises: Level 1**
+
+1. What is higher order function
+
+    > A **Higher Order Function** is a function that receive **another function** as parameter and also **returns a function**
+
+2. What is Higher Order Component
+
+    > Similar to JavaScript **Higher Order Function** in React a **Higher Order Component** or `HOC` receives a **Component** as a parameter and also returns another **Component**.
+
+3. What is the difference between higher order function and higher order component?
+
+    > The first relates to **Functions** and the latter relates to **Components.**
+
+4. A higher order component can allow us to enhance a component. (T or F)
+
+    > `true`
+
+## **Exercises: Level 2**
+
+1. Make a higher order component which can handle all the input type.
+
+    ```jsx
+    const InputComponent = (Component) => {
+      return (props) => {
+        return <Component {...props} />;
+      };
+    };
+
+    const clickHandler = (e) => {
+      console.log("clicked" + e.target);
+    };
+
+    const keyHandler = (e) => {
+      console.log("keypress: " + e.target.value);
+    };
+
+    const mouseHandler = (e) => {
+      console.log("mouse out" + e.target);
+    };
+
+    const Input = ({ onClick, onMouseLeave, onKeyPress, placeholder }) => {
+      return (
+        <input
+          onClick={onClick}
+          onMouseLeave={onMouseLeave}
+          onKeyPress={onKeyPress}
+          placeholder={placeholder}
+        />
+      );
+    };
+
+    const NewInputComponent = InputComponent(Input);
+
+    class App extends Component {
+      render() {
+        return (
+          <div className="App">
+            <Input placeholder={"INPUT"} />
+            <NewInputComponent
+              placeholder={"INPUT CAPTURE"}
+              onClick={clickHandler}
+              onKeyPress={keyHandler}
+              onMouseLeave={mouseHandler}
+            />
+          </div>
+        );
+      }
+    }
+    ```
+
+    > 🛰️ `LIVE DEMO` [day 16 - level 2.1](https://codesandbox.io/s/day-16-level-21-r453h?file=/src/App.js:59-1001)
+
+# 🚩 [Day 17 - React Router](https://github.com/Asabeneh/30-Days-Of-React/blob/master/17_React_Router/17_react_router.md)
