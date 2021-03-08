@@ -1149,550 +1149,552 @@ Learn more about class based component by changing previous days exercises to cl
 
     > 🛰️ **`LIVE DEMO`** [day - 8 level 2.2](https://codesandbox.io/s/eager-breeze-moue4?file=/src/App.js:0-3436)
 
-    # 🚩 [Day 9 - Conditional Rendering](https://github.com/Asabeneh/30-Days-Of-React/blob/master/09_Day_Conditional_Rendering/09_conditional_rendering.md)
+# 🚩 [Day 9 - Conditional Rendering](https://github.com/Asabeneh/30-Days-Of-React/blob/master/09_Day_Conditional_Rendering/09_conditional_rendering.md)
 
-    ## **Exercises: Level 1**
+## **Exercises: Level 1**
 
-    1. What is conditional rendering?
+1. What is conditional rendering?
 
-        > Conditional rendering consists in display something on computer screen based in `true` or `false` conditions
+    > Conditional rendering consists in display something on computer screen based in `true` or `false` conditions
 
-    2. How do you implement conditional rendering?
+2. How do you implement conditional rendering?
 
-        > Using regular `if` and `else` statements and ternary operators like `&&`
+    > Using regular `if` and `else` statements and ternary operators like `&&`
 
-    3. Which method of conditional rendering do you prefer to use?
+3. Which method of conditional rendering do you prefer to use?
 
-        > Ternary Operators
+    > Ternary Operators
 
-    ## **Exercises: Level 2**
+## **Exercises: Level 2**
 
-    1. Make a single page application which changes the body of the background based on the season of the year(Autumn, Winter, Spring, Summer)
+1. Make a single page application which changes the body of the background based on the season of the year(Autumn, Winter, Spring, Summer)
 
-        ```jsx
-        import React from "react";
+    ```jsx
+    import React from "react";
 
-        class Main extends React.Component {
-          render() {
-            const { style, month, season, text } = this.props;
-            return (
-              <div align="center" style={style}>
-                <section
-                  style={{
-                    placeContent: "center",
-                    alignContent: "center",
-                    display: "grid"
-                  }}
-                >
-                  {month}
-                  <h1>{season}</h1>
-                  {text}
-                </section>
-              </div>
-            );
-          }
+    class Main extends React.Component {
+      render() {
+        const { style, month, season, text } = this.props;
+        return (
+          <div align="center" style={style}>
+            <section
+              style={{
+                placeContent: "center",
+                alignContent: "center",
+                display: "grid"
+              }}
+            >
+              {month}
+              <h1>{season}</h1>
+              {text}
+            </section>
+          </div>
+        );
+      }
+    }
+
+    class App extends React.Component {
+      //  INITAL STATE OF THE EVENTS
+      state = {
+        season: "SEASON",
+        style: {
+          backgroundColor: "gold",
+          height: "100vh",
+          display: "grid",
+          fontSize: "4vw"
         }
+      };
 
-        class App extends React.Component {
-          //  INITAL STATE OF THE EVENTS
-          state = {
-            season: "SEASON",
-            style: {
-              backgroundColor: "gold",
-              height: "100vh",
-              display: "grid",
-              fontSize: "4vw"
-            }
-          };
+      showDate = (time) => {
+        const months = [
+          "January", // 0
+          "February", // 1
+          "March", // 2
+          "April", // 3
+          "May", // 4
+          "June", // 5
+          "July", // 6
+          "August", // 7
+          "September", // 8
+          "October", // 9
+          "November", // 10
+          "December" // 11
+        ];
 
-          showDate = (time) => {
-            const months = [
-              "January", // 0
-              "February", // 1
-              "March", // 2
-              "April", // 3
-              "May", // 4
-              "June", // 5
-              "July", // 6
-              "August", // 7
-              "September", // 8
-              "October", // 9
-              "November", // 10
-              "December" // 11
-            ];
+        const month = months[time.getMonth()];
 
-            const month = months[time.getMonth()];
+        return month;
+      };
+      handleSeason = (month) => {
+        const autumn = ["September", "October", "November"];
+        const winter = ["December", "January", "February"];
+        const spring = ["March", "April", "May"];
+        const summer = ["June", "July", "August"];
 
-            return month;
-          };
-          handleSeason = (month) => {
-            const autumn = ["September", "October", "November"];
-            const winter = ["December", "January", "February"];
-            const spring = ["March", "April", "May"];
-            const summer = ["June", "July", "August"];
+        console.log(month);
+        console.log(autumn.some((item) => item.includes(month)));
 
-            console.log(month);
-            console.log(autumn.some((item) => item.includes(month)));
+        let season = autumn.some((item) => item.includes(month))
+          ? "AUTUMN"
+          : winter.some((item) => item.includes(month))
+          ? "WINTER"
+          : spring.some((item) => item.includes(month))
+          ? "SPRING"
+          : summer.some((item) => item.includes(month))
+          ? "SUMMER"
+          : null;
 
-            let season = autumn.some((item) => item.includes(month))
-              ? "AUTUMN"
-              : winter.some((item) => item.includes(month))
-              ? "WINTER"
-              : spring.some((item) => item.includes(month))
-              ? "SPRING"
-              : summer.some((item) => item.includes(month))
-              ? "SUMMER"
-              : null;
+        return season;
+      };
 
-            return season;
-          };
+      render() {
+        return (
+          <>
+            <Main
+              style={this.state.style}
+              month={this.showDate(new Date())}
+              season={this.handleSeason(this.showDate(new Date()))}
+              text={this.state.season}
+            />
+          </>
+        );
+      }
+    }
 
-          render() {
-            return (
-              <>
-                <Main
-                  style={this.state.style}
-                  month={this.showDate(new Date())}
-                  season={this.handleSeason(this.showDate(new Date()))}
-                  text={this.state.season}
-                />
-              </>
-            );
-          }
+    export default App;
+    ```
+
+    > 🛰️ **`LIVE DEMO`** [day 9 - level 2.1](https://codesandbox.io/s/day-9-level-21-iz0qz?file=/src/App.js:0-1989)
+
+2. Make a single page application which change the body of the background based on the time of the day(Morning, Noon, Evening, Night)
+
+    ```jsx
+    import React from "react";
+
+    class Main extends React.Component {
+      render() {
+        const { style, time, text } = this.props;
+        return (
+          <div align="center" style={style}>
+            <section
+              style={{
+                placeContent: "center",
+                alignContent: "center",
+                display: "grid"
+              }}
+            >
+              <strong>{time}</strong>
+              <h1>{text}</h1>
+            </section>
+          </div>
+        );
+      }
+    }
+
+    class App extends React.Component {
+      //  INITAL STATE OF THE EVENTS
+      state = {
+        hour: `Time: ${new Date().getHours()} hours`,
+        date: new Date().getHours(),
+        style: {
+          backgroundColor:
+            (new Date().getHours() > 6 && new Date().getHours()) < 12
+              ? "lightyellow"
+              : (new Date().getHours() > 12 && new Date().getHours()) < 18
+              ? "lightcyan"
+              : (new Date().getHours() > 18 && new Date().getHours()) < 22
+              ? "midnightblue"
+              : "black",
+          color: new Date().getHours() > 18 ? "white" : "black",
+          height: "100vh",
+          display: "grid",
+          fontSize: "4vw"
         }
+      };
+
+      handleTime = () => {
+        const hour =
+          (this.state.date > 6 && this.state.date) < 12
+            ? "MORNING"
+            : (this.state.date > 12 && this.state.date) < 18
+            ? "NOON"
+            : (this.state.date > 18 && this.state.date) < 22
+            ? "EVENING"
+            : "NIGHT";
+
+        return hour;
+      };
 
-        export default App;
-        ```
-
-        > 🛰️ **`LIVE DEMO`** [day 9 - level 2.1](https://codesandbox.io/s/day-9-level-21-iz0qz?file=/src/App.js:0-1989)
-
-    2. Make a single page application which change the body of the background based on the time of the day(Morning, Noon, Evening, Night)
-
-        ```jsx
-        import React from "react";
-
-        class Main extends React.Component {
-          render() {
-            const { style, time, text } = this.props;
-            return (
-              <div align="center" style={style}>
-                <section
-                  style={{
-                    placeContent: "center",
-                    alignContent: "center",
-                    display: "grid"
-                  }}
-                >
-                  <strong>{time}</strong>
-                  <h1>{text}</h1>
-                </section>
-              </div>
-            );
-          }
-        }
-
-        class App extends React.Component {
-          //  INITAL STATE OF THE EVENTS
-          state = {
-            hour: `Time: ${new Date().getHours()} hours`,
-            date: new Date().getHours(),
-            style: {
-              backgroundColor:
-                (new Date().getHours() > 6 && new Date().getHours()) < 12
-                  ? "lightyellow"
-                  : (new Date().getHours() > 12 && new Date().getHours()) < 18
-                  ? "lightcyan"
-                  : (new Date().getHours() > 18 && new Date().getHours()) < 22
-                  ? "midnightblue"
-                  : "black",
-              color: new Date().getHours() > 18 ? "white" : "black",
-              height: "100vh",
-              display: "grid",
-              fontSize: "4vw"
-            }
-          };
-
-          handleTime = () => {
-            const hour =
-              (this.state.date > 6 && this.state.date) < 12
-                ? "MORNING"
-                : (this.state.date > 12 && this.state.date) < 18
-                ? "NOON"
-                : (this.state.date > 18 && this.state.date) < 22
-                ? "EVENING"
-                : "NIGHT";
-
-            return hour;
-          };
-
-          render() {
-            return (
-              <>
-                <Main
-                  style={this.state.style}
-                  time={this.state.hour}
-                  text={this.handleTime()}
-                />
-              </>
-            );
-          }
-        }
-
-        export default App;
-        ```
-
-        > 🛰️ **`LIVE DEMO`** [day 9 - level 2.2](https://codesandbox.io/s/day-9-level-22-9xr8e?file=/src/App.js:0-1603)
-
-    ## **Exercises: Level 3**
-
-    1. Fetching data takes some amount of time. A user has to wait until the data get loaded. Implement a loading functionality of a data is not fetched yet. You can simulate the delay using setTimeout.
-
-        ```jsx
-        import React from "react";
-        import "./styles.css";
-
-        const url =
-          "https://gateway.marvel.com/v1/public/comics?ts=128&apikey=171e1910640a20fe5dd9db069ebb5d51&hash=b3d3c016b3897b06142dec1193146b5b";
-
-        class App extends React.Component {
-          state = {
-            loading: true,
-            image: null,
-            title: null
-          };
+      render() {
+        return (
+          <>
+            <Main
+              style={this.state.style}
+              time={this.state.hour}
+              text={this.handleTime()}
+            />
+          </>
+        );
+      }
+    }
 
-          async componentDidMount() {
-            const request = await fetch(url);
-            const response = await request.json();
-            const random = Math.floor(Math.random() * response.data.results.length);
+    export default App;
+    ```
 
-            this.setState({
-              loading: false,
-              image: (
-                <img
-                  style={{ width: "32vw" }}
-                  src={`${response.data.results[random].thumbnail.path}.jpg`}
-                  alt={"thumb"}
-                />
-              ),
-              title: <h2>{response.data.results[random].title}</h2>
-            });
-          }
+    > 🛰️ **`LIVE DEMO`** [day 9 - level 2.2](https://codesandbox.io/s/day-9-level-22-9xr8e?file=/src/App.js:0-1603)
 
-          render() {
-            return (
-              <div className="App">
-                {this.state.loading ? <h1>LOADING...</h1> : this.state.image}
-                {this.state.title}
-              </div>
-            );
-          }
-        }
+## **Exercises: Level 3**
 
-        export default App;
-        ```
+1. Fetching data takes some amount of time. A user has to wait until the data get loaded. Implement a loading functionality of a data is not fetched yet. You can simulate the delay using setTimeout.
 
-        > 🛰️ **`LIVE DEMO`** [day - 9 level 3](https://codesandbox.io/s/day-9-level-3-b1tyn?file=/src/App.js)
+    ```jsx
+    import React from "react";
+    import "./styles.css";
 
-        # 🚩 [Day 10 - React Project Folder Structure](https://github.com/Asabeneh/30-Days-Of-React/blob/master/10_React_Project_Folder_Structure/10_react_project_folder_structure.md)
+    const url =
+      "https://gateway.marvel.com/v1/public/comics?ts=128&apikey=171e1910640a20fe5dd9db069ebb5d51&hash=b3d3c016b3897b06142dec1193146b5b";
 
-        ## **Exercises:Level 1**
+    class App extends React.Component {
+      state = {
+        loading: true,
+        image: null,
+        title: null
+      };
 
-        1. What is the importance of React Folder Structure and File Naming
+      async componentDidMount() {
+        const request = await fetch(url);
+        const response = await request.json();
+        const random = Math.floor(Math.random() * response.data.results.length);
 
-            > It keeps the development organized and easier to maintain by you, your team and the other people that will review your code base.
+        this.setState({
+          loading: false,
+          image: (
+            <img
+              style={{ width: "32vw" }}
+              src={`${response.data.results[random].thumbnail.path}.jpg`}
+              alt={"thumb"}
+            />
+          ),
+          title: <h2>{response.data.results[random].title}</h2>
+        });
+      }
 
-        2. How do you export file
+      render() {
+        return (
+          <div className="App">
+            {this.state.loading ? <h1>LOADING...</h1> : this.state.image}
+            {this.state.title}
+          </div>
+        );
+      }
+    }
 
-            > We need to write `export` or `export default` before the Component, Function or Variable.
+    export default App;
+    ```
 
-        3. How do you import file
+    > 🛰️ **`LIVE DEMO`** [day - 9 level 3](https://codesandbox.io/s/day-9-level-3-b1tyn?file=/src/App.js)
 
-            > We need to write `import` before the Component, Function or Variable you want to import and `from './filePath'` after to find your file path.
+# 🚩 [Day 10 - React Project Folder Structure](https://github.com/Asabeneh/30-Days-Of-React/blob/master/10_React_Project_Folder_Structure/10_react_project_folder_structure.md)
 
-        4. Make a component of module and export it as named or default export
+## **Exercises:Level 1**
 
-            ```jsx
-            import React, { Component } from 'react'
+1. What is the importance of React Folder Structure and File Naming
 
-            class App extends Component {
-            	// code goes here
-            }
+    > It keeps the development organized and easier to maintain by you, your team and the other people that will review your code base.
 
-            export default App
-            ```
+2. How do you export file
 
-        5. Make a component or module and import it
+    > We need to write `export` or `export default` before the Component, Function or Variable.
 
-            ```jsx
-            import React, { Component } from 'react'
+3. How do you import file
 
-            class App extends Component {
-            	// code goes here
-            }
+    > We need to write `import` before the Component, Function or Variable you want to import and `from './filePath'` after to find your file path.
 
-            export default App
+4. Make a component of module and export it as named or default export
 
-            ...
+    ```jsx
+    import React, { Component } from 'react'
 
-            import App from './filePath'
-            ```
+    class App extends Component {
+    	// code goes here
+    }
 
-        6. Change all the components you have to different folder structure
+    export default App
+    ```
 
-            > `skip`
+5. Make a component or module and import it
 
-        ## **Exercises:Level 2**
+    ```jsx
+    import React, { Component } from 'react'
 
-        1. Make a simple portfolio using the components we have created so far. Implement a dark mode by using the function we wrote on day 8 challenge.
+    class App extends Component {
+    	// code goes here
+    }
 
-        # 🚩 [Day 11 - Events](https://github.com/Asabeneh/30-Days-Of-React/blob/master/11_Day_Events/11_events.md)
+    export default App
 
-        ## **Exercises: Level 1**
+    ...
 
-        1. What is an event?
+    import App from './filePath'
+    ```
 
-            > A `event` are the events which occur on the `DOM`  when some code is **triggered** by **inputs** (like **keyboard, mouse and touchscreen)**.
+6. Change all the components you have to different folder structure
 
-        2. What is the different between an HTML element event and React event?
+    > `skip`
 
-            > React `event` are written with camelCase to differ from the `HTML event`
+## **Exercises:Level 2**
 
-        3. Write at least 4 keyboard events?
+1. Make a simple portfolio using the components we have created so far. Implement a dark mode by using the function we wrote on day 8 challenge.
 
-            > `onKeyDown`, `onKeyPress`, `onKeyUp` and `onCopy`
+# 🚩 [Day 11 - Events](https://github.com/Asabeneh/30-Days-Of-React/blob/master/11_Day_Events/11_events.md)
 
-        4. Write at least 8 mouse events?
+## **Exercises: Level 1**
 
-            > `onMouseDown`, `onMouseUp`, `onMouseEnter`, `onMouseLeave`, `onMouseMove`, `onMouseOut`, `onMouseOver` and `onMouseWheel`.
+1. What is an event?
 
-        5. What are the most common mouse and keyboard events?
+    > A `event` are the events which occur on the `DOM`  when some code is **triggered** by **inputs** (like **keyboard, mouse and touchscreen)**.
 
-            > `onMouseMove`, `onMouseEnter`, `onMouseLeave`, `onMouseOut`, `onClick`, `onKeyDown`, `onKeyPress`, `onKeyUp`, `onCopy`, `onCut`, `onDrag`, `onChange`, `onBlur`, `onInput` and`onSubmit.`
+2. What is the different between an HTML element event and React event?
 
-        6. Write an event specific to input element?
+    > React `event` are written with camelCase to differ from the `HTML event`
 
-            ```jsx
-            handleClick = (e) => {
-            	e.target.click ? 'CLICKED' : ''
-            }
-            ```
+3. Write at least 4 keyboard events?
 
-        7. Write an event specific to form element?
+    > `onKeyDown`, `onKeyPress`, `onKeyUp` and `onCopy`
 
-            ```jsx
-            handleChange = (e) => {   
-              const { name, value } = e.target
-                
-              this.setState({ [name]: value })
-            }
-            ```
+4. Write at least 8 mouse events?
 
-        8. Display the coordinate of the view port when a mouse is moving on the body?
+    > `onMouseDown`, `onMouseUp`, `onMouseEnter`, `onMouseLeave`, `onMouseMove`, `onMouseOut`, `onMouseOver` and `onMouseWheel`.
 
-            ```jsx
-            class App extends React.Component {
-              state = {
-                x: 0,
-                y: 0
-              }
-              handleMouseMove = (e) => {
-                this.setState({x: e.screenX, y: e.screenY})
-              }
+5. What are the most common mouse and keyboard events?
 
-              render() {
-                const {x, y} = this.state
-                return (
-                  <>
-                    <div style={{height: '100vh'}} onMouseMove={this.handleMouseMove}>
-                      <h2> Mouse coordinates: {x} {y} </h2>
-                    </div>
-                  </>
-                )
-              }
-            }
-            ```
+    > `onMouseMove`, `onMouseEnter`, `onMouseLeave`, `onMouseOut`, `onClick`, `onKeyDown`, `onKeyPress`, `onKeyUp`, `onCopy`, `onCut`, `onDrag`, `onChange`, `onBlur`, `onInput` and`onSubmit.`
 
-        9. What is the difference between onInput, onChange and onBlur?
+6. Write an event specific to input element?
 
-            > `onInput` we have the inputs from user, generally inside a form. `onChange` is triggered when a change is detected in the **Component** **state**. `onBlur` is triggered when the user leaves `focus` of the **Component**.
+    ```jsx
+    handleClick = (e) => {
+    	e.target.click ? 'CLICKED' : ''
+    }
+    ```
 
-        10. Where do we put the onSubmit event ?
+7. Write an event specific to form element?
 
-            > When we need to catch the typed inputs by user inside a `form` or a `button`.
+    ```jsx
+    handleChange = (e) => {   
+      const { name, value } = e.target
+        
+      this.setState({ [name]: value })
+    }
+    ```
 
-        ## **Exercises: Level 2**
+8. Display the coordinate of the view port when a mouse is moving on the body?
 
-        Implement the following using onMouseEnter event
+    ```jsx
+    class App extends React.Component {
+      state = {
+        x: 0,
+        y: 0
+      }
+      handleMouseMove = (e) => {
+        this.setState({x: e.screenX, y: e.screenY})
+      }
 
-        ![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/react_event_on_mouse_enter.gif](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/react_event_on_mouse_enter.gif)
-
-        ```jsx
-        import { Component } from "react";
-        import "./styles.css";
-
-        const CatchMe = ({ style, mouseEnter }) => {
-          return (
-            <div style={style} onMouseEnter={mouseEnter}>
-              <h1>CATCH ME</h1>
+      render() {
+        const {x, y} = this.state
+        return (
+          <>
+            <div style={{height: '100vh'}} onMouseMove={this.handleMouseMove}>
+              <h2> Mouse coordinates: {x} {y} </h2>
             </div>
-          );
-        };
+          </>
+        )
+      }
+    }
+    ```
 
-        class App extends Component {
-          state = {
-            style: {
-              display: "grid",
-              placeItems: "center",
-              placeContent: "center",
-              backgroundColor: "orange",
-              height: "100vh"
-            },
-            blockState: {
-              display: "absolute",
-              backgroundColor: "rgba(255,255,255,0.25)",
-              color: "aliceblue",
-              padding: "1em 4em",
-              borderRadius: "8px",
-              transform: ""
-            }
-          };
-          handleMouseEnter = (e) => {
-            console.log(e.target);
-            this.setState({
-              blockState: {
-                ...this.state.blockState,
-                transform: `translate(${Math.round(Math.random() * 50)}vw,
-                 ${Math.round(Math.random() * -50)}vh)`
-              }
-            });
-          };
+9. What is the difference between onInput, onChange and onBlur?
 
-          render() {
-            return (
-              <div style={this.state.style} className="App">
-                <CatchMe
-                  style={this.state.blockState}
-                  mouseEnter={this.handleMouseEnter}
-                />
-              </div>
-            );
-          }
-        }
+    > `onInput` we have the inputs from user, generally inside a form. `onChange` is triggered when a change is detected in the **Component** **state**. `onBlur` is triggered when the user leaves `focus` of the **Component**.
 
-        export default App;
-        ```
+10. Where do we put the onSubmit event ?
 
-        > 🛰️ **`LIVE DEMO`** [day - 11 level 2](https://codesandbox.io/s/day-11-level-2-5geom?file=/src/App.js:0-1118)
+    > When we need to catch the typed inputs by user inside a `form` or a `button`.
 
-        # 🚩 [Day 12 - Forms](https://github.com/Asabeneh/30-Days-Of-React/blob/master/12_Day_Forms/12_forms.md)
+## **Exercises: Level 2**
 
-        ## **Exercises: Level 1**
+Implement the following using onMouseEnter event
 
-        1. What is the importance of form?
+![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/react_event_on_mouse_enter.gif](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/react_event_on_mouse_enter.gif)
 
-            > `form` is important to store **user information** or **details** of any sort for later use.
+```jsx
+import { Component } from "react";
+import "./styles.css";
 
-        2. How many input types do you know?
+const CatchMe = ({ style, mouseEnter }) => {
+  return (
+    <div style={style} onMouseEnter={mouseEnter}>
+      <h1>CATCH ME</h1>
+    </div>
+  );
+};
 
-            > `skip`
+class App extends Component {
+  state = {
+    style: {
+      display: "grid",
+      placeItems: "center",
+      placeContent: "center",
+      backgroundColor: "orange",
+      height: "100vh"
+    },
+    blockState: {
+      display: "absolute",
+      backgroundColor: "rgba(255,255,255,0.25)",
+      color: "aliceblue",
+      padding: "1em 4em",
+      borderRadius: "8px",
+      transform: ""
+    }
+  };
+  handleMouseEnter = (e) => {
+    console.log(e.target);
+    this.setState({
+      blockState: {
+        ...this.state.blockState,
+        transform: `translate(${Math.round(Math.random() * 50)}vw,
+         ${Math.round(Math.random() * -50)}vh)`
+      }
+    });
+  };
 
-        3. Mention at least four attributes of an input element
+  render() {
+    return (
+      <div style={this.state.style} className="App">
+        <CatchMe
+          style={this.state.blockState}
+          mouseEnter={this.handleMouseEnter}
+        />
+      </div>
+    );
+  }
+}
 
-            > `type`, `name`, `placeholder` and `value`.
+export default App;
+```
 
-        4. What is the importance of htmlFor?
+> 🛰️ **`LIVE DEMO`** [day - 11 level 2](https://codesandbox.io/s/day-11-level-2-5geom?file=/src/App.js:0-1118)
 
-            > We use `htmlFor` to specify which element we want to `label`.
+# 🚩 [Day 12 - Forms](https://github.com/Asabeneh/30-Days-Of-React/blob/master/12_Day_Forms/12_forms.md)
 
-        5. Write an input type which is not given in the example if there is?
+## **Exercises: Level 1**
 
-            > `skip`
+1. What is the importance of form?
 
-        6. What is a controlled input?
+    > `form` is important to store **user information** or **details** of any sort for later use.
 
-            > Is a `input` controlled by React `state`.
+2. How many input types do you know?
 
-        7. What do you need to write a controlled input?
+    > `skip`
 
-            > To store information in a `state` for later use.
+3. Mention at least four attributes of an input element
 
-        8. What event type do you use to listen changes on an input field?
+    > `type`, `name`, `placeholder` and `value`.
 
-            > `onInput`
+4. What is the importance of htmlFor?
 
-        9. What is the value of a checked checkbox?
+    > We use `htmlFor` to specify which element we want to `label`.
 
-            > `true`
+5. Write an input type which is not given in the example if there is?
 
-        10. When do you use onChange, onBlur, onSubmit?
+    > `skip`
 
-            > When we need to capture **state changes**, when we need to trigger **mouse leaving** the specified area and when we need to **store user typed data**.
+6. What is a controlled input?
 
-        11. What is the purpose of writing e.preventDefault() inside the submit handler method?
+    > Is a `input` controlled by React `state`.
 
-            > To prevent the **default** behaviour of **refreshing** every time.
+7. What do you need to write a controlled input?
 
-        12. How do you bind data in React? The first input field example is data binding in React.
+    > To store information in a `state` for later use.
 
-            > We can bind data by using `state` to store the value and `onChange` to change the value `state`.
+8. What event type do you use to listen changes on an input field?
 
-        13. What is validation?
+    > `onInput`
 
-            > Is the process to **check** if the user followed the given **rules**.
+9. What is the value of a checked checkbox?
 
-        14. What is the event type you use to listen when an input changes?
+    > `true`
 
-            > `onChange`
+10. When do you use onChange, onBlur, onSubmit?
 
-        15. What are event types do you use to validate an input?
+    > When we need to capture **state changes**, when we need to trigger **mouse leaving** the specified area and when we need to **store user typed data**.
 
-            > the **HTML5** built-in validation or using a **Regular Expression**.
+11. What is the purpose of writing e.preventDefault() inside the submit handler method?
 
-        ## **Exercises: Level 2**
+    > To prevent the **default** behaviour of **refreshing** every time.
 
-        1. Validate the form given above (a gif image or a video will be provided later). First try to validate without using any library then try it with [validator.js](https://www.npmjs.com/package/validator).
+12. How do you bind data in React? The first input field example is data binding in React.
 
-        > 🛰️ **`LIVE DEMO`** day - 12 level 2
+    > We can bind data by using `state` to store the value and `onChange` to change the value `state`.
 
-        ## **Exercises: Level 1**
+13. What is validation?
 
-        1. What is component life cycles
+    > Is the process to **check** if the user followed the given **rules**.
 
-            > Component life cycles are the process of **rendering** a **React Component** on the `DOM` and consists of 3 basic steps: **mounting**, **updating** and **unmounting.**
+14. What is the event type you use to listen when an input changes?
 
-        2. What is the purpose of life cycles
+    > `onChange`
 
-            > Draw UI Components on the `DOM` according to life cycles rules: **mounting**, **updating** and **unmounting**.
+15. What are event types do you use to validate an input?
 
-        3. What are the three stages of a component life cycle
+    > the **HTML5** built-in validation or using a **Regular Expression**.
 
-            > **Mounting**, **updating** and **unmounting**.
+## **Exercises: Level 2**
 
-        4. What does mounting means?
+1. Validate the form given above (a gif image or a video will be provided later). First try to validate without using any library then try it with [validator.js](https://www.npmjs.com/package/validator).
 
-            > Mounting is the **initial** step that React follows to render components on the `DOM`
+> 🛰️ **`LIVE DEMO`** day - 12 level 2
 
-        5. What does updating means
+## **Exercises: Level 1**
 
-            > Updating is the **second** step which returns a `boolean`. If `true` it will **re-render** the specified Component. If `false` it will never re-render, or **updating.**
+1. What is component life cycles
 
-        6. What does unmounting means?
+    > Component life cycles are the process of **rendering** a **React Component** on the `DOM` and consists of 3 basic steps: **mounting**, **updating** and **unmounting.**
 
-            > It is the **last** step in which React understands that the Component life cycle it's done.
+2. What is the purpose of life cycles
 
-        7. What is the most common built-in mounting life cycle method?
+    > Draw UI Components on the `DOM` according to life cycles rules: **mounting**, **updating** and **unmounting**.
 
-            > The `render()` method.
+3. What are the three stages of a component life cycle
 
-        8. What are the mounting life cycle methods?
+    > **Mounting**, **updating** and **unmounting**.
 
-            > `constructor()`, `static getStateDerivedFromProps()`, `render()`, `componentDidMount()`.
+4. What does mounting means?
 
-        9. What are the updating life cycle methods?
+    > Mounting is the **initial** step that React follows to render components on the `DOM`
 
-            > `static getStateDerivedFromProps()`, `shouldComponentUpdate()`, `render()`, `getSnapshotBeforeUpdate()`, `componentDidUpdate()`.
+5. What does updating means
 
-        10. What is the unmounting life cycle method?
+    > Updating is the **second** step which returns a `boolean`. If `true` it will **re-render** the specified Component. If `false` it will never re-render, or **updating.**
 
-            > As the unmounting is the last step in the chain it needs only the final method of `componentWillUnmount()`.
+6. What does unmounting means?
+
+    > It is the **last** step in which React understands that the Component life cycle it's done.
+
+7. What is the most common built-in mounting life cycle method?
+
+    > The `render()` method.
+
+8. What are the mounting life cycle methods?
+
+    > `constructor()`, `static getStateDerivedFromProps()`, `render()`, `componentDidMount()`.
+
+9. What are the updating life cycle methods?
+
+    > `static getStateDerivedFromProps()`, `shouldComponentUpdate()`, `render()`, `getSnapshotBeforeUpdate()`, `componentDidUpdate()`.
+
+10. What is the unmounting life cycle method?
+
+    > As the unmounting is the last step in the chain it needs only the final method of `componentWillUnmount()`.
+
+# 🚩 [Day 13 - Controlled and Uncontrolled Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/13_Day_Controlled_Versus_Uncontrolled_Input/13_uncontrolled_input.md)
