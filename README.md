@@ -1904,3 +1904,174 @@ Now, you know about React router. Build your portfolio with React and implement 
 > `skip`
 
 # 🚩 [Day 18 - Fetch vs Axios](https://github.com/Asabeneh/30-Days-Of-React/blob/master/18_Fetch_And_Axios/18_fetch_axios.md)
+
+## **Exercises: Level 1**
+
+1. What is HTTP request?
+
+    > Is the **protocol** which the **Web** uses to **transfer information**.
+
+2. What are the most common HTTP requests?
+
+    > `GET`, `POST`, `PUT`, `PATCH`, `DELETE`
+
+3. What is fetch?
+
+    > Is the **JavaScript API** to retrieve information from external databases.
+
+4. What is axios?
+
+    > Is the **npm** package implementation of JavaScript `fetch` .
+
+5. What is the difference between fetch and axios?
+
+    > They are basically the same, but **axios** is easier and have **broader compatibility**.
+
+6. Do you prefer fetch to axios for make HTTP requests?
+
+    > axios.
+
+## **Exercises: Level 2**
+
+1. Find the average metric weight and life span of cats in the following [API](https://api.thecatapi.com/v1/breeds). There are 67 breeds of cats in the API.
+
+![https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/average_cat_weight_and_age.png](https://github.com/Asabeneh/30-Days-Of-React/raw/master/images/average_cat_weight_and_age.png)
+
+```jsx
+import React, { Component } from "react";
+import axios from "axios";
+
+// Cats API URL
+const catsAPI = "https://api.thecatapi.com/v1/breeds";
+
+class App extends Component {
+  state = {
+    data: []
+  };
+  componentDidMount() {
+    this.fetchCatsAPI();
+  }
+  fetchCatsAPI = async () => {
+    try {
+      const request = await axios.get(catsAPI);
+      const response = await request.data;
+      this.setState({
+        data: response
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  render() {
+    const breedCounts = []
+    const catCountries = this.state.data.map(cat=>cat.origin)
+    console.log(new Set(this.state.data.map(cat=>cat.origin)).size)
+    const setOfCatCountries = new Set(catCountries)
+    console.log(setOfCatCountries)
+    
+    setOfCatCountries.forEach(item=> {
+      const countryMatchs = catCountries.filter(cat=>cat === item)
+      breedCounts.push({country: item, breeds: countryMatchs.length})
+    })
+    console.log(breedCounts)
+    
+    const catsSorted = breedCounts.sort((a,b)=> b.breeds - a.breeds)
+    const setOfCatSorted = new Set(catsSorted)
+    console.log(setOfCatSorted)
+
+    
+    const totalCats = this.state.data.length;
+    const allCatsWeight = this.state.data.map(
+      (cat) =>
+        (parseInt(cat.weight.metric.match(/\d{1,2}/g)[1]) +
+          parseInt(cat.weight.metric.match(/\d{1,2}/g)[0])) /
+        2
+    );
+    const allCatsLifeSpan = this.state.data.map(
+      (cat) =>
+        (parseInt(cat.life_span.match(/\d{1,2}/g)[1]) +
+          parseInt(cat.life_span.match(/\d{1,2}/g)[0])) /
+        2
+    );
+    const averageWeight =
+      allCatsWeight.reduce((acc, curr) => acc + curr, 0) / totalCats;
+    const averageLifeSpan =
+      allCatsLifeSpan.reduce((acc, curr) => acc + curr, 0) / totalCats;
+
+    return (
+      <>
+        <div
+          align={"center"}
+          style={{
+            backgroundColor: "darkcyan",
+            height: "100vh",
+            display: "grid",
+            placeContent: "center",
+            placeItems: "center",
+            color: "white"
+          }}
+        >
+          <h1>Cats API</h1>
+          <h3>There are {totalCats} cat breeds in the API</h3>
+          <h2>
+            On average, a cat weights about{" "}
+            <strong
+              style={{
+                borderRadius: "10%",
+                border: "2px dashed cyan",
+                padding: "8px"
+              }}
+            >
+              {averageWeight.toFixed(2)}
+            </strong>{" "}
+            and lives about{" "}
+            <strong
+              style={{
+                borderRadius: "10%",
+                border: "2px dashed cyan",
+                padding: "8px"
+              }}
+            >
+              {averageLifeSpan.toFixed(2)}
+            </strong>
+          </h2>
+        </div>
+      </>
+    );
+  }
+}
+
+export default App;
+```
+
+> 🛰️ `LIVE DEMO` [day 18 - level 2](https://codesandbox.io/s/day-18-level-2-i6lsc?file=/src/App.js:0-2255)
+
+## **Exercises: Level 3**
+
+1. How many countries do have cat breeds?
+
+    > 20
+
+    ```jsx
+    console.log(new Set(this.state.data.map(cat=>cat.origin)).size) // 20
+    ```
+
+2. Which country has the highest number of cat breeds?
+
+    > United States: 28
+
+    ```jsx
+    setOfCatCountries.forEach(item=> {
+          const countryMatchs = catCountries.filter(cat=>cat === item)
+          breedCounts.push({country: item, breeds: countryMatchs.length})
+        })
+        console.log(breedCounts) // {country: United Stade, breeds: 28}
+    ```
+
+3. Arrange countries in ascending order based on the number of cat breeds they have?
+
+    ```jsx
+    const catsSorted = breedCounts.sort((a,b)=> a.breeds - b.breeds)
+        const setOfCatSorted = new Set(catsSorted)
+        console.log(setOfCatSorted)
+    ```
