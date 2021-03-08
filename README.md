@@ -1885,3 +1885,22 @@ export default App;
     > 🛰️ `LIVE DEMO` [day 16 - level 2.1](https://codesandbox.io/s/day-16-level-21-r453h?file=/src/App.js:59-1001)
 
 # 🚩 [Day 17 - React Router](https://github.com/Asabeneh/30-Days-Of-React/blob/master/17_React_Router/17_react_router.md)
+
+## **Exercises: Level 1**
+
+1. What package do you use to implement routing in react?
+
+    > The `react-router-dom` or `@reach/router` npm package.
+
+2. What is the default export in react-router-dom?
+3. What is the use of the following Components(Route, NavLink, Switch, Redirect, Prompt)
+
+    > **Route** let us navigate from a **Component** to another. **Navlink** has the ability to create links to navigate trough our website. **Switch** changes the navigation path of a given **Route** to render only the specified path. **Redirect** changes the desired **Component** based on specified conditions. **Prompt** acts like `HTML` `alert` to show a message to the user.
+
+## **Exercises: Level 2**
+
+Now, you know about React router. Build your portfolio with React and implement React router for navigation.
+
+> `skip`
+
+# 🚩 [Day 18 - Fetch vs Axios](https://github.com/Asabeneh/30-Days-Of-React/blob/master/18_Fetch_And_Axios/18_fetch_axios.md)
