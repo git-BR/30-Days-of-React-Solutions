@@ -1655,6 +1655,52 @@ export default App;
 
 > 🛰️ **`LIVE DEMO`** day - 12 level 2
 
+# 🚩 [Day 13 - Controlled and Uncontrolled Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/13_Day_Controlled_Versus_Uncontrolled_Input/13_uncontrolled_input.md)
+
+## **Exercises: Level 1**
+
+1. What is a controlled input?
+
+    > Is a `input` controlled by React `state`.
+
+2. What is an uncontrolled input
+
+    > Is a `input` controlled by ref on the `DOM` and traditional `HTML` input fields. Uncontrolled by React.
+
+3. How do you get a content of a certain HTML element in React ?
+
+    > With `event` handlers and React `state`.
+
+4. Why it is not a good idea to touch the DOM directly in React ?
+
+    > React has its own way of handling the `DOM` using the `VDOM`and this is the best practice. `VDOM` has the bonus of being faster.
+
+5. What is most frequently used in React ? Controlled or Uncontrolled input.
+
+    > Controlled
+
+6. What do you need to write uncontrolled input?
+
+    > You use `ref` to get form values from the `DOM`.
+
+7. Does state require to write uncontrolled input?
+
+    > No. You use state in controlled inputs.
+
+8. When do you use uncontrolled input?
+
+    > When you need to target a specific `DOM` element.
+
+9. When do you use controlled input?
+
+    > Always. Unless you have a specific need to target the `DOM` without React.
+
+10. Do you use a controlled or uncontrolled input to validate form input fields?
+
+    > You can use both, but controlled by React is the **best practice**.
+
+# 🚩 [Day 14 - Component Life Cycles](https://github.com/Asabeneh/30-Days-Of-React/blob/master/14_Day_Component_Life_Cycles/14_component_life_cycles.md)
+
 ## **Exercises: Level 1**
 
 1. What is component life cycles
@@ -1697,4 +1743,3 @@ export default App;
 
     > As the unmounting is the last step in the chain it needs only the final method of `componentWillUnmount()`.
 
-# 🚩 [Day 13 - Controlled and Uncontrolled Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/13_Day_Controlled_Versus_Uncontrolled_Input/13_uncontrolled_input.md)
