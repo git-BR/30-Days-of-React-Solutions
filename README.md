@@ -1749,65 +1749,66 @@ export default App;
 
 1. What is a package?
 
-    > 
+    > It's a collection of `modules` which could be installed in your project
 
 2. What is a third party package ?
 
-    > 
+    > It's a package distributed from developers outside of a original project
 
 3. Do you have to use third party packages?
 
-    > 
+    > Your project could be done entirely by yourself with your **own solutions**, but that **takes time** and, in most cases, you will find yourself doing the **same solutions** which a package already does. So, **yes**, using third party packages it's a good idea.
 
 4. How do you know the popularity and stability of a third party package?
 
-    > 
+    > You can visit the source of codebase, generally **Github**, to find **issues** open/resolved and how many **stars** it got
 
 5. How many JavaScript packages are there on the npm registry?
 
-    > 
+    > In 2020, more than **1.3 millions** of npm packages and counting.
 
 6. How do you install a third party package?
 
-    > 
+    > You can use `yarn` or `npm` package managers
 
 7. What packages do you use most frequently?
 
-    > 
+    > In React, `axios`
 
 8. What package do you use to fetch data?
 
-    > 
+    > `axios`
 
 9. What is the purpose of classnames package?
 
-    > 
+    > To add multiple `className` and **enable programmatic logic**
 
 10. What is the pupose validator package?
 
-    > 
+    > To **sanitize** and **validate** `strings`
 
 ## **Exercises: Level 2**
 
 1. Learn how to use Sass
 
-    > 
+    > `skip`
 
 2. Learn how to use axios
 
-    > 
+    > `skip`
 
 3. Learn how to use moment and react-icons
 
-    > 
+    > `skip`
 
 4. Use the validator package to validate the form you had in day 12
 
-    > 
+    > `skip (no form provided)`
 
 5. Use classnames to change a class based on some logic.
 
-    > 
+    > `skip`
+    
 
 # 🚩 [Day 16 - Higher Order Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/16_Higher_Order_Component/16_higher_order_component.md)
 
