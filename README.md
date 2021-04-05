@@ -2076,3 +2076,290 @@ export default App;
         const setOfCatSorted = new Set(catsSorted)
         console.log(setOfCatSorted)
     ```
+
+# 🚩 Day 19 - Cats API Project
+
+## **Exercises: project**
+
+1. Use the following two APIs, [all cats](https://api.thecatapi.com/v1/breeds) and [a single cat][[https://api.thecatapi.com/v1/images/search?breed_id=abys](https://api.thecatapi.com/v1/images/search?breed_id=abys)]. In the single cat API, you can get url property which is the image of the cat. Your result should look like this [demo](https://www.30daysofreact.com/day-19/cats).
+
+    ```jsx
+    import './styles.css'
+    import axios from 'axios'
+    import { Component } from 'react'
+    import styled from 'styled-components'
+
+    // STYLE VARIABLES
+    const smallVH = '4vh'
+    const mediumVH = '6vh'
+    const bigVH = '8vh'
+    const outlineShadow = '1px 1px 0 gray'
+    // STYLED COMPONENTS
+    const StyledHeader = styled.header`
+      font-family: Montserrat;
+      background-image: linear-gradient(lightblue, lightcyan);
+      height: 1000px;
+      color: white;
+      a {
+        font-family: Roboto;
+        text-decoration: none;
+        color: darkcyan;
+        margin: 1vw;
+        border: 2px solid darkcyan;
+        border-radius: 8px;
+        padding: 1vh 2vw;
+        transition: all 0.5s;
+      }
+      a:hover {
+        background-color: darkcyan;
+        color: white;
+      }
+      h1 {
+        color: #0f6e94;
+        padding-top: ${smallVH};
+        text-shadow: ${outlineShadow};
+      }
+      h2 {
+        margin: ${smallVH};
+        text-shadow: ${outlineShadow};
+      }
+      nav {
+        line-height: ${smallVH};
+      }
+      summary {
+        display: grid;
+        place-items: center;
+        margin-top: ${smallVH};
+        font-size: ${mediumVH};
+        font-size: ${mediumVH};
+        div {
+          display: grid;
+          max-width: 600px;
+        }
+        legend {
+          font-size: ${smallVH};
+          margin-top: ${bigVH};
+          text-shadow: ${outlineShadow};
+          color: #2daee0;
+        }
+        sub {
+          font-size: ${smallVH};
+          text-shadow: ${outlineShadow};
+          color: #e04362;
+          b {
+            color: #2daee0;
+            font-weight: 900;
+          }
+        }
+      }
+    `
+
+    const StyledMain = styled.main`
+      font-family: Montserrat;
+      margin-top: -50px;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: ${smallVH};
+      border: 2px solid #2daee0;
+      border-radius: 32px;
+      box-shadow: 0px -3px 16px #00000080;
+      background-color: #dddddda0;
+      transition: all 0.5s;
+
+      legend {
+        margin-top: ${smallVH};
+        margin-bottom: ${smallVH};
+        border-left: 8px solid #e04362;
+      }
+
+      .cat-card {
+        display: grid;
+        place-items: center;
+      }
+      h1 {
+        font-size: ${mediumVH};
+        color: #e04362;
+        text-shadow: ${outlineShadow};
+      }
+      h2 {
+        display: block;
+        text-align: left;
+        margin: 16px;
+        color: #0f6e94;
+      }
+      b {
+        color: #e04362;
+      }
+      img {
+        width: 100%;
+        transition: all 0.5s;
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+      }
+      img:hover {
+        width: 110%;
+        border: 2px solid red;
+        box-shadow: 0 0 16px #00000080;
+        border-radius: 4px;
+        filter: brightness(1.1);
+      }
+    `
+
+    // REACT BASIC COMPONENTS
+    const Header = () => (
+      <header>
+        <h1 align="center">30 DAYS OF REACT</h1>
+        <h2 align="center">Day 20 - Cats API</h2>
+        <nav className="nav">
+          <div align="center">
+            <big>
+              <a href="/">HOME</a>
+              <a href="/">ABOUT</a>
+              <a href="/">DUMMY DATA</a>
+            </big>
+          </div>
+        </nav>
+        <summary>
+          <div align="center">
+            <h2 style={{ lineHeight: 0 }}>
+              <h1>CATS</h1> PARADISE
+            </h2>
+            <legend>There are {67} cats breeds</legend>
+            <sub>
+              On average a cat can weight about <b>{4.71}Kg</b> and lives about{' '}
+              <b>{13.75}</b> years
+            </sub>
+          </div>
+        </summary>
+      </header>
+    )
+
+    const CatCard = ({
+      name,
+      origin,
+      image,
+      id,
+      temperament,
+      life_span,
+      weight,
+      description
+    }) => (
+      <div className="cat-card">
+        <h1>{name}</h1>
+        <img src={image} key={id} alt={name}></img>
+        <legend>
+          <h2>
+            <b>Origin:</b> {origin}
+          </h2>
+          <h2>
+            <b>Breed: </b>
+            {name}
+          </h2>
+          <h2>
+            <b>Temperament: </b>
+            {temperament}
+          </h2>
+          <h2>
+            <b>Life Span: </b>
+            {life_span} years
+          </h2>
+          <h2>
+            <b>Weight: </b>
+            {weight} Kg
+          </h2>
+          <h2>
+            <b>Description: </b>
+            {description}
+          </h2>
+        </legend>
+      </div>
+    )
+
+    // REACT CLASS COMPONENTS
+    class Main extends Component {
+      render() {
+        const { data } = this.props
+        return (
+          <main>
+            {data.map(
+              ({
+                origin,
+                reference_image_id,
+                name,
+                id,
+                temperament,
+                life_span,
+                weight,
+                description
+              }) => (
+                <CatCard
+                  image={`https://cdn2.thecatapi.com/images/${reference_image_id}.jpg`}
+                  origin={origin}
+                  name={name}
+                  id={id}
+                  temperament={temperament}
+                  life_span={life_span}
+                  weight={weight.metric}
+                  description={description}
+                />
+              )
+            )}
+          </main>
+        )
+      }
+    }
+
+    class App extends Component {
+      state = {
+        loading: true,
+        data: [],
+        imgData: []
+      }
+
+      // UPDATING STATE OF A CLASS COMPONENT
+      componentDidMount() {
+        this.fetchCatsAPI()
+      }
+
+      fetchCatsAPI = async () => {
+        try {
+          const baseURL = 'https://api.thecatapi.com/v1/breeds'
+          const response = await axios.get(baseURL)
+          const data = await response.data
+          this.setState({
+            loading: false,
+            data
+          })
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+      render() {
+        return (
+          <>
+            <StyledHeader>
+              <Header />
+            </StyledHeader>
+            <StyledMain>
+              <Main
+                data={this.state.data}
+                origin={this.state.data}
+                image={this.state.imgData}
+                name={this.state.data}
+                id={this.state.data}
+                temperament={this.state.data}
+                life_span={this.state.data}
+                weight={this.state.data}
+                description={this.state.data}
+              />
+            </StyledMain>
+          </>
+        )
+      }
+    }
+
+    export default App
+    ```
+    
