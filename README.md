@@ -2365,3 +2365,76 @@ export default App;
 
     > 🛰️ `LIVE DEMO` [day 19 - Cats API project](https://codesandbox.io/s/day-19-cats-api-4kdq5)
 
+
+# 🚩 [Day 20 - Projects](https://github.com/Asabeneh/30-Days-Of-React/blob/master/20_projects/20_projects.md)
+
+`skip - nothing to do` 
+
+# 🚩 [Day 21 - Hooks](https://github.com/Asabeneh/30-Days-Of-React/blob/master/21_Introducing_Hooks/21_introducing_hooks.md)
+
+`skip - jump to next` 
+
+# 🚩 [Day 22 - Form Using Hooks](https://github.com/Asabeneh/30-Days-Of-React/blob/master/22_Form_Using_Hooks/22_form_using_hooks.md)
+
+## **Exercises: Level 1**
+
+1. What is the importance of form?
+
+    > to get get specific, and valid, data from users
+
+2. How many input types do you know?
+
+    > `skip`
+
+3. Mention at least four attributes of an input element
+
+    > `autocomplete` , `type` , `checked` and `value`
+
+4. What is the importance of htmlFor?
+
+    > to label a given `element`  for instance
+
+5. Write an input type which is not given in the example if there is?
+
+    > `checkbox`
+
+6. What is a controlled input?
+
+    > it's the `input` controlled by **JavaScript** and not by **React**
+
+7. What do you need to write a controlled input?
+
+    > The `HTML` `input` element
+
+8. What event type do you use to listen changes on an input field?
+
+    > The even `onChange`
+
+9. What is the value of a checked checkbox?
+
+    > The `input` attribute `checked` returns `true` by **default**
+
+10. When do you use onChange, onBlur, onSubmit?
+
+    > `onChange` is used when the `input` change. `onBlur` is used when the `focus` leaves the area. `onSubmit` is used when there is a need for a user to fill in form data.
+
+11. What is the purpose of writing e.preventDefault() inside the submit handler method?
+
+    > `e.preventDefault()` prevents the **browser** from the **default** behavior of **refreshing** the page when user **submit** something
+
+12. How do you bind data in React? The first input field example is data binding in React.
+
+    > We can use, for instance, `onChange` to bind `input` data to any event change.
+
+13. What is validation?
+
+    > Is the process to verify/validate if the **user** entered the correct data specified by the programmer rules
+
+14. What is the event type you use to listen when an input changes?
+
+    > `onChange`
+
+15. What are event types do you use to validate an input?
+
+    > You can use `onBlur` , `onChange` or `onSubmit` events and invokes validation logic when appropriate
+
