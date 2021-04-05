@@ -2365,3 +2365,7 @@ export default App;
 
     > 🛰️ `LIVE DEMO` [day 19 - Cats API project](https://codesandbox.io/s/day-19-cats-api-4kdq5)
 
+
+# 🚩 [Day 20 - Projects](https://github.com/Asabeneh/30-Days-Of-React/blob/master/20_projects/20_projects.md)
+
+`skip - nothing to do`
