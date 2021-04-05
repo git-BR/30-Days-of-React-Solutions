@@ -2077,7 +2077,7 @@ export default App;
         console.log(setOfCatSorted)
     ```
 
-# 🚩 Day 19 - Cats API Project
+# 🚩 [Day 19 - Cats API Project](https://github.com/Asabeneh/30-Days-Of-React/blob/master/19_projects/19_projects.md)
 
 ## **Exercises: project**
 
@@ -2362,4 +2362,6 @@ export default App;
 
     export default App
     ```
-    
+
+    > 🛰️ `LIVE DEMO` [day 19 - Cats API project](https://codesandbox.io/s/day-19-cats-api-4kdq5)
+
