@@ -2438,3 +2438,462 @@ export default App;
 
     > You can use `onBlur` , `onChange` or `onSubmit` events and invokes validation logic when appropriate
 
+# 🚩 [Day 23 - Fetching Data Using Hooks](https://github.com/Asabeneh/30-Days-Of-React/blob/master/23_Fetching_Data_Using_Hooks/23_fetching_data_using_hooks.md)
+
+> `skip - no exercises provided`
+
+# 🚩 [Day 24 - Project Using React Hooks](https://github.com/Asabeneh/30-Days-Of-React/blob/master/24_projects/24_projects.md)
+
+## **Exercises**
+
+1. Build the following application using [countries API](https://restcountries.eu/rest/v2/all).  [DEMO](https://www.30daysofreact.com/day-23/countries-data)
+
+```jsx
+import { useState, useEffect } from 'react'
+import styled from 'styled-components'
+import axios from 'axios'
+
+const StyledHeader = styled.header`
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 32px black;
+  #bg-container {
+    height: clamp(10vw, 25vw, 40vh);
+    width: 100%;
+    overflow: hidden;
+    #bg-image {
+      background-image: url('https://wallup.net/wp-content/uploads/2017/11/22/381996-map-world-world_map-countries.jpg');
+      filter: blur(8px);
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      scale: 110%;
+    }
+  }
+  h1 {
+    font-family: Montserrat;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 6vw;
+    color: white;
+    text-shadow: 0 1px 0 black;
+    position: absolute;
+    z-index: 2;
+    top: 4%;
+  }
+  p {
+    opacity: 0.8;
+    font-family: Montserrat;
+    font-weight: black;
+    font-size: 2vh;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+    text-decoration: underline orangered 2px;
+  }
+  #search {
+    background-image: linear-gradient(to right, yellowgreen, darkgreen);
+    width: 100%;
+    box-shadow: 0 2px 8px #00000080;
+    input {
+      opacity: 0.8;
+      margin: 0 1vh 2vh;
+    }
+  }
+`
+const StyledCountries = styled.main`
+  font-family: Ubuntu;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  place-content: center;
+  background-color: forestgreen;
+  transition: all 0.5s;
+  box-shadow: 0 0 32px #00000090;
+  div {
+    width: clamp(20vw, 25vh, 35vw);
+    margin: 4vh;
+    height: max-content;
+    border-radius: 16px;
+    color: seashell;
+    text-shadow: 0 1px 3px black;
+    background-image: linear-gradient(darkgreen, transparent);
+    border: 1vh solid green;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+    padding: 3vh;
+    transition: all 0.5s;
+    img {
+      width: 100%;
+      transition: all 0.3s;
+      filter: brightness(0.95);
+    }
+    img:focus {
+      filter: brightness(1.1);
+      border: 2px solid red;
+      scale: 105%;
+    }
+  }
+`
+const StyledFooter = styled.footer`
+  padding-bottom: 8vh;
+  h1 {
+    line-height: 50%;
+    font-family: Domine;
+    font-size: 3em;
+    color: gray;
+    text-shadow: 1px 1px 1px lightgrey;
+    small {
+      font-size: 40%;
+      font-weight: 100;
+    }
+  }
+  #pop {
+    display: grid;
+    color: darkolivegreen;
+    #graph-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      margin: 1vh;
+      #graph-bg {
+      }
+      #progress-graph {
+        background-image: linear-gradient(to right, yellowgreen, darkgreen);
+        height: 100%;
+        margin: 0.25vh;
+        box-shadow: 3px 3px 3px grey;
+      }
+    }
+  }
+
+  #lang {
+    display: grid;
+    color: darkolivegreen;
+    #graph-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      margin: 1vh;
+      #graph-bg {
+      }
+      #progress-graph {
+        background-image: linear-gradient(to right, yellowgreen, darkgreen);
+        height: 100%;
+        margin: 0.25vh;
+        box-shadow: 3px 3px 3px grey;
+      }
+    }
+  }
+`
+
+const SearchBar = ({ capturedInput, search }) => (
+  <div id="search" align="center">
+    <p>currently we have 250 countries</p>
+    <input
+      style={{ width: '48vw' }}
+      onKeyUp={capturedInput}
+      placeholder={'search by name, capital or language '}
+      search={search}
+      autoFocus={true}
+    />
+  </div>
+)
+
+const CountryCard = ({ name, flag, capital, languages, currencies }) => (
+  <main align="center">
+    <div align="center">
+      <img tabIndex={1} src={flag} alt={name} />
+      <figcaption>{name}</figcaption>
+      <article>
+        <p>
+          <b>Capital: </b>
+          {capital}
+        </p>
+        <p>
+          <b>Language: </b>
+          {languages}
+        </p>
+        <p>
+          <b>Currency: </b>
+          {currencies}
+        </p>
+      </article>
+    </div>
+  </main>
+)
+
+const FooterButton = ({ population, languages }) => (
+  <div align="center" style={{ margin: '4vh' }}>
+    <button id="population" type="button" onClick={population}>
+      POPULATION
+    </button>
+    <button id="languages" type="button" onClick={languages}>
+      LANGUAGES
+    </button>
+  </div>
+)
+
+const Population = ({ population }) => <>{population}</>
+const Languages = ({ languages }) => <>{languages}</>
+
+const Footer = ({ population, languages }) => (
+  <footer>
+    <Population population={population} />
+    <Languages languages={languages} />
+  </footer>
+)
+
+const App = () => {
+  const [countries, setCountries] = useState([])
+  const [countryEntry, setCountryEntry] = useState('')
+  const [isPressed, setIsPressed] = useState('languages')
+
+  const capturedInput = e => {
+    const value = e.target.value
+    setCountryEntry(value)
+  }
+
+  const searchFN = array => {
+    const searchTerm = countryEntry.toLowerCase()
+    const findCountry = array.map(
+      ({ name, flag, capital, languages, currencies }) => {
+        // BASE CARD TO INSTANCIATE
+        const FullCard = () => (
+          <CountryCard
+            name={name}
+            flag={flag}
+            capital={capital}
+            languages={languages.map(({ name }) => (
+              <dt key={name}>{name}</dt>
+            ))}
+            currencies={currencies.map(({ name }) => name)}
+          />
+        )
+        return name.toLowerCase().includes(searchTerm) ? (
+          <FullCard />
+        ) : capital.toLowerCase().includes(searchTerm) ? (
+          <FullCard />
+        ) : languages
+            .map(({ name }) => name)
+            .join('')
+            .toLowerCase()
+            .includes(searchTerm) ? (
+          <FullCard />
+        ) : (
+          ''
+        )
+      }
+    )
+    return findCountry
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    const url = 'https://restcountries.eu/rest/v2/all'
+    const response = await axios.get(url)
+    const data = await response.data
+    setCountries(data)
+  }
+
+  const Top10Population = ({ name, population }) => {
+    const totalPop = countries
+      .map(({ population }) => population)
+      .reduce((prev, next) => prev + next)
+    const top10Pop = countries
+      .map(({ population }) => population)
+      .sort((a, b) => b - a)
+      .slice(0, 10)
+    const top10Name = countries
+      .map(country => country)
+      .sort((a, b) => b.population - a.population)
+      .map(({ name }) => name)
+      .slice(0, 10)
+
+    return (
+      <>
+        {/* TOTAL POPULATION GRAPH */}
+        <h1 align="center">
+          WORLD TEN{' '}
+          <small>
+            <br />
+            MOST POPULATED COUNTRIES
+          </small>
+        </h1>
+        <div id="pop">
+          <div id="graph-container">
+            <div align="right" style={{ marginRight: '1vh' }}>
+              World
+            </div>
+            <div id="progress-graph" />
+            <div align="left" style={{ marginLeft: '1vh' }}>
+              {totalPop.toLocaleString()}
+            </div>
+          </div>
+
+          {/* GRAPH MAP FOR EACH POPULATION */}
+          {top10Pop.map((item, index) => {
+            return (
+              <>
+                <div id="graph-container">
+                  <div align="right" style={{ marginRight: '1vh' }}>
+                    {top10Name[index]}
+                  </div>
+                  <div
+                    key={item}
+                    id="grap-bg"
+                    style={{ backgroundColor: '#eeeeeef0' }}
+                  >
+                    <div
+                      id="progress-graph"
+                      style={{
+                        width: Math.round((item / totalPop) * 100) + '%'
+                      }}
+                    />
+                  </div>
+
+                  {/* POPULATION COUNT MAP */}
+                  <div key={index} align="left" style={{ marginLeft: '1vh' }}>
+                    {item.toLocaleString()}
+                  </div>
+                </div>
+              </>
+            )
+          })}
+        </div>
+      </>
+    )
+  }
+
+  const Top10Languages = () => {
+    const totalLangSet = new Set()
+    countries.map(({ languages }) =>
+      languages.map(({ name }) => totalLangSet.add(name))
+    )
+    const langCount = []
+    const langArray = []
+    let count = 0
+    countries.map(({ languages }) =>
+      languages.map(({ name }) => {
+        langArray[count] = name
+        count++
+      })
+    )
+    totalLangSet.forEach(item => {
+      const langMatch = langArray.filter(entry => entry === item)
+      langCount.push({ lang: item, count: langMatch })
+    })
+    const top10Lang = langCount
+      .sort((a, b) => b.count.length - a.count.length)
+      .slice(0, 10)
+
+    return (
+      <>
+        <h1 align="center">
+          WORLD TEN
+          <small>
+            <br />
+            MOST SPOKEN LANGUAGES
+          </small>
+        </h1>
+
+        {/* TOTAL LANGUAGES GRAPH */}
+        <div id="lang">
+          <div id="graph-container">
+            <div align="right" style={{ marginRight: '1vh' }}>
+              Total languages
+            </div>
+            <div id="progress-graph" />
+            <div align="left" style={{ marginLeft: '1vh' }}>
+              {totalLangSet.size}
+            </div>
+          </div>
+
+          {/* GRAPH MAP FOR EACH LANGUAGE NAME */}
+          {top10Lang.map(({ lang, count }) => {
+            return (
+              <>
+                <div id="graph-container">
+                  <div align="right" style={{ marginRight: '1vh' }}>
+                    {lang}
+                  </div>
+                  <div id="grap-bg" style={{ backgroundColor: '#eeeeeef0' }}>
+                    <div
+                      id="progress-graph"
+                      style={{
+                        width:
+                          Math.round((count.length / totalLangSet.size) * 100) +
+                          '%'
+                      }}
+                    />
+                  </div>
+
+                  {/* LANGUAGE COUNT MAP*/}
+                  <div align="left" style={{ marginLeft: '1vh' }}>
+                    {count.length}
+                  </div>
+                </div>
+              </>
+            )
+          })}
+        </div>
+      </>
+    )
+  }
+
+  // REACT APP RENDER
+  return (
+    <section align="center">
+      <StyledHeader>
+        <div id="bg-container">
+          <div id="bg-image">
+            <br />
+          </div>
+        </div>
+
+        <h1 align="center">
+          WORLD COUNTRIES DATA <br />
+        </h1>
+
+        <SearchBar capturedInput={capturedInput} />
+      </StyledHeader>
+      <StyledCountries>
+        {countryEntry !== ''
+          ? searchFN(countries)
+          : countries.map(({ name, flag, capital, languages, currencies }) => (
+              <CountryCard
+                flag={flag}
+                name={name}
+                capital={capital}
+                languages={languages.map(({ name }) => (
+                  <dt key={name}>{name}</dt>
+                ))}
+                currencies={currencies.map(({ name }) => name)}
+              />
+            ))}
+      </StyledCountries>
+      <StyledFooter>
+        <FooterButton
+          population={() => setIsPressed('population')}
+          languages={() => setIsPressed('languages')}
+        />
+        {isPressed === 'population' ? (
+          <Top10Population />
+        ) : isPressed === 'languages' ? (
+          <Top10Languages />
+        ) : (
+          ''
+        )}
+      </StyledFooter>
+    </section>
+  )
+}
+
+export default App
+```
+
+> 🛰️ `LIVE DEMO` [day 24 - Countries API project](https://codesandbox.io/s/day-24-project-with-hooks-qyziy?file=/src/App.js)
