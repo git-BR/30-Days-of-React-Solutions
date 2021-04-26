@@ -1,11 +1,6 @@
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png">
-</p>
+<h1 align="center">30 Days of React - Solutions🔧</h1>
 
-<h1 align="center">
-    🔧Solutions for the 30 Days of React <br>
-    (Challenges made by Asabeneh)
-</h1>
+<i align="center">![React Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png)</i>
 
 > I'm taking this 30 days of React challenge to test my React skills while enjoying the reviewing process. Please note that the answers here follow the same pace as it was originally intended by its creator (Asabeneh Yeatayeh). That means that the answers follow the beginner to advanced, so I will avoid using advanced React knowledge (like Hooks, Suspense, etc) in beginner challenges.
 
