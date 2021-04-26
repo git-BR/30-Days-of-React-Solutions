@@ -1,4 +1,4 @@
-<h1 align="center">30 Days of React - Solutions🔧</h1>
+<h1 align="center">📚 30 Days of React - Solutions</h1>
 
 <i align="center">![React Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png)</i>
 
@@ -11,7 +11,7 @@
 
 # 🚩 [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
 
-## **Exercises: What is React?**
+## ✔️ **Exercises: What is React?**
 
 1. What is React?
 
@@ -45,7 +45,7 @@
 
     > In React, A **Web App**, or simply Website, is a collection of Components which, together, can do many tasks like a Blog, Store Documents, Games...
 
-## **Exercises: Why React?**
+## ✔️ **Exercises: Why React?**
 
 1. Why did you chose to use react?
 
@@ -59,7 +59,7 @@
 
     > **`skip`**
 
-## **Exercises: JSX**
+## ✔️ **Exercises: JSX**
 
 1. What is an HTML element?
 
@@ -93,7 +93,7 @@
 
     > **`Babel`**, in this case, understands **ECMAScript** (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
 
-## **Exercises: JSX Elements**
+## ✔️ **Exercises: JSX Elements**
 
 1. What is a JSX element?
 
@@ -138,7 +138,7 @@
           );
     ```
 
-## **Exercises: Inline Style**
+## ✔️ **Exercises: Inline Style**
 
 1. Create a style object for the main JSX
 
@@ -164,13 +164,13 @@
 
     > skip
 
-## **Exercises: Internal Styles**
+## ✔️ **Exercises: Internal Styles**
 
 1. Apply different styles to your JSX elements
 
     > **`skip`**
 
-## **Exercise: Inject data to JSX**
+## ✔️ **Exercise: Inject data to JSX**
 
 1. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
@@ -178,7 +178,7 @@
 
 # 🚩 [Day 3 - Setting Up](https://github.com/Asabeneh/30-Days-Of-React/blob/master/03_Day_Setting_Up/03_setting_up.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is a module?
 
@@ -220,7 +220,7 @@
 
     > **`skip`**
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. Import and render the following images
 
@@ -319,7 +319,7 @@
 
     > 🛰️ **`LIVE DEMO`** [day 3 - level 2.2](https://codesandbox.io/s/day-3-5dsrf)
 
-## **Exercises: Level 3**
+## ✔️ **Exercises: Level 3**
 
 1. Design the following user card.
 
@@ -451,7 +451,7 @@
 
 # 🚩 [Day 5 - Props](https://github.com/Asabeneh/30-Days-Of-React/blob/master/05_Day_Props/05_props.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is props in a React component ?
 
@@ -473,13 +473,13 @@
 
     > Default propTypes is the **default** data type that we set for a given props
 
-## Exercises: Level 3
+## ✔️ **Exercises: Level 3**
 
 > skip (similar projects already done)
 
 # 🚩 [Day 6 - List, Map and Keys](https://github.com/Asabeneh/30-Days-Of-React/blob/master/06_Day_Map_List_Keys/06_map_list_keys.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. Why you need to map an array ?
 
@@ -497,7 +497,7 @@
 
     > Yes, not only you're gaining efficiency with destructuring, but also you have less code written. So it's easier to read and clean (less cluttering)
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. In the following design, evens are green, odds are yellow and prime numbers are red. Build the following colors using React component
 
@@ -615,7 +615,7 @@
 
     > 🛰️ **`LIVE DEMO`** [day - 6 level 2.2](https://codesandbox.io/s/day-6-level-22-tooek?file=/src/App.js)
 
-## **Exercises: Level 3**
+## ✔️ **Exercises: Level 3**
 
 1.Make the following bar group using the given [data](https://github.com/Asabeneh/30-Days-Of-React/blob/master/06_Day_Map_List_Keys/06_map_list_keys_boilerplate/src/data/ten_most_highest_populations.js)
 
@@ -703,7 +703,7 @@ export default App;
 
 # 🚩 [Day 7 - Class Components](https://github.com/Asabeneh/30-Days-Of-React/blob/master/07_Day_Class_Components/07_class_components.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. How do you write a pure JavaScript function
 2. What is inheritance and how do you make a child from a parent class?
@@ -715,7 +715,7 @@ export default App;
 8. What is React life cycle ? (not covered yet) ?
 9. What is state in React ? (not covered yet)
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 Learn more about class based component by changing previous days exercises to class based components
 
@@ -723,7 +723,7 @@ Learn more about class based component by changing previous days exercises to cl
 
 # 🚩 [Day 8 - States](https://github.com/Asabeneh/30-Days-Of-React/blob/master/08_Day_States/08_states.md)
 
-### **Exercises: Level 1**
+### ✔️ **Exercises: Level 1**
 
 1. What was your state today? Are you happy? I hope so. If you manage to make it this far you should be happy.
 
@@ -755,7 +755,7 @@ Learn more about class based component by changing previous days exercises to cl
     stateSetter = this.setState()
     ```
 
-### **Exercises: Level 2**
+### ✔️ **Exercises: Level 2**
 
 1. Use React state to change the background of the page. You can use this technique to apply a dark mode for your portfolio.
 
@@ -1146,7 +1146,7 @@ Learn more about class based component by changing previous days exercises to cl
 
 # 🚩 [Day 9 - Conditional Rendering](https://github.com/Asabeneh/30-Days-Of-React/blob/master/09_Day_Conditional_Rendering/09_conditional_rendering.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is conditional rendering?
 
@@ -1160,7 +1160,7 @@ Learn more about class based component by changing previous days exercises to cl
 
     > Ternary Operators
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. Make a single page application which changes the body of the background based on the season of the year(Autumn, Winter, Spring, Summer)
 
@@ -1338,7 +1338,7 @@ Learn more about class based component by changing previous days exercises to cl
 
     > 🛰️ **`LIVE DEMO`** [day 9 - level 2.2](https://codesandbox.io/s/day-9-level-22-9xr8e?file=/src/App.js:0-1603)
 
-## **Exercises: Level 3**
+## ✔️ **Exercises: Level 3**
 
 1. Fetching data takes some amount of time. A user has to wait until the data get loaded. Implement a loading functionality of a data is not fetched yet. You can simulate the delay using setTimeout.
 
@@ -1391,7 +1391,7 @@ Learn more about class based component by changing previous days exercises to cl
 
 # 🚩 [Day 10 - React Project Folder Structure](https://github.com/Asabeneh/30-Days-Of-React/blob/master/10_React_Project_Folder_Structure/10_react_project_folder_structure.md)
 
-## **Exercises:Level 1**
+## ✔️ **Exercises:Level 1**
 
 1. What is the importance of React Folder Structure and File Naming
 
@@ -1437,13 +1437,13 @@ Learn more about class based component by changing previous days exercises to cl
 
     > `skip`
 
-## **Exercises:Level 2**
+## ✔️ **Exercises:Level 2**
 
 1. Make a simple portfolio using the components we have created so far. Implement a dark mode by using the function we wrote on day 8 challenge.
 
 # 🚩 [Day 11 - Events](https://github.com/Asabeneh/30-Days-Of-React/blob/master/11_Day_Events/11_events.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is an event?
 
@@ -1516,7 +1516,7 @@ Learn more about class based component by changing previous days exercises to cl
 
     > When we need to catch the typed inputs by user inside a `form` or a `button`.
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 Implement the following using onMouseEnter event
 
@@ -1582,7 +1582,7 @@ export default App;
 
 # 🚩 [Day 12 - Forms](https://github.com/Asabeneh/30-Days-Of-React/blob/master/12_Day_Forms/12_forms.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is the importance of form?
 
@@ -1644,7 +1644,7 @@ export default App;
 
     > the **HTML5** built-in validation or using a **Regular Expression**.
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. Validate the form given above (a gif image or a video will be provided later). First try to validate without using any library then try it with [validator.js](https://www.npmjs.com/package/validator).
 
@@ -1652,7 +1652,7 @@ export default App;
 
 # 🚩 [Day 13 - Controlled and Uncontrolled Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/13_Day_Controlled_Versus_Uncontrolled_Input/13_uncontrolled_input.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is a controlled input?
 
@@ -1696,7 +1696,7 @@ export default App;
 
 # 🚩 [Day 14 - Component Life Cycles](https://github.com/Asabeneh/30-Days-Of-React/blob/master/14_Day_Component_Life_Cycles/14_component_life_cycles.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is component life cycles
 
@@ -1740,7 +1740,7 @@ export default App;
 
 # 🚩 [Day 15 - Third Party Packages](https://github.com/Asabeneh/30-Days-Of-React/blob/master/15_Third_Party_Packages/15_third_party_packages.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is a package?
 
@@ -1782,7 +1782,7 @@ export default App;
 
     > To **sanitize** and **validate** `strings`
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. Learn how to use Sass
 
@@ -1807,7 +1807,7 @@ export default App;
 
 # 🚩 [Day 16 - Higher Order Component](https://github.com/Asabeneh/30-Days-Of-React/blob/master/16_Higher_Order_Component/16_higher_order_component.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is higher order function
 
@@ -1825,7 +1825,7 @@ export default App;
 
     > `true`
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. Make a higher order component which can handle all the input type.
 
@@ -1882,7 +1882,7 @@ export default App;
 
 # 🚩 [Day 17 - React Router](https://github.com/Asabeneh/30-Days-Of-React/blob/master/17_React_Router/17_react_router.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What package do you use to implement routing in react?
 
@@ -1893,7 +1893,7 @@ export default App;
 
     > **Route** let us navigate from a **Component** to another. **Navlink** has the ability to create links to navigate trough our website. **Switch** changes the navigation path of a given **Route** to render only the specified path. **Redirect** changes the desired **Component** based on specified conditions. **Prompt** acts like `HTML` `alert` to show a message to the user.
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 Now, you know about React router. Build your portfolio with React and implement React router for navigation.
 
@@ -1901,7 +1901,7 @@ Now, you know about React router. Build your portfolio with React and implement 
 
 # 🚩 [Day 18 - Fetch vs Axios](https://github.com/Asabeneh/30-Days-Of-React/blob/master/18_Fetch_And_Axios/18_fetch_axios.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is HTTP request?
 
@@ -1927,7 +1927,7 @@ Now, you know about React router. Build your portfolio with React and implement 
 
     > axios.
 
-## **Exercises: Level 2**
+## ✔️ **Exercises: Level 2**
 
 1. Find the average metric weight and life span of cats in the following [API](https://api.thecatapi.com/v1/breeds). There are 67 breeds of cats in the API.
 
@@ -2042,7 +2042,7 @@ export default App;
 
 > 🛰️ `LIVE DEMO` [day 18 - level 2](https://codesandbox.io/s/day-18-level-2-i6lsc?file=/src/App.js:0-2255)
 
-## **Exercises: Level 3**
+## ✔️ **Exercises: Level 3**
 
 1. How many countries do have cat breeds?
 
@@ -2074,7 +2074,7 @@ export default App;
 
 # 🚩 [Day 19 - Cats API Project](https://github.com/Asabeneh/30-Days-Of-React/blob/master/19_projects/19_projects.md)
 
-## **Exercises: project**
+## ✔️ **Exercises: project**
 
 1. Use the following two APIs, [all cats](https://api.thecatapi.com/v1/breeds) and [a single cat][[https://api.thecatapi.com/v1/images/search?breed_id=abys](https://api.thecatapi.com/v1/images/search?breed_id=abys)]. In the single cat API, you can get url property which is the image of the cat. Your result should look like this [demo](https://www.30daysofreact.com/day-19/cats).
 
@@ -2371,7 +2371,7 @@ export default App;
 
 # 🚩 [Day 22 - Form Using Hooks](https://github.com/Asabeneh/30-Days-Of-React/blob/master/22_Form_Using_Hooks/22_form_using_hooks.md)
 
-## **Exercises: Level 1**
+## ✔️ **Exercises: Level 1**
 
 1. What is the importance of form?
 
@@ -2439,7 +2439,7 @@ export default App;
 
 # 🚩 [Day 24 - Project Using React Hooks](https://github.com/Asabeneh/30-Days-Of-React/blob/master/24_projects/24_projects.md)
 
-## **Exercises**
+## ✔️ **Exercises**
 
 1. Build the following application using [countries API](https://restcountries.eu/rest/v2/all).  [DEMO](https://www.30daysofreact.com/day-23/countries-data)
 
