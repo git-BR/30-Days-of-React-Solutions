@@ -11,7 +11,7 @@
 
 # 🚩 [Day 2 - Getting Started React](https://github.com/Asabeneh/30-Days-Of-React/blob/master/02_Day_Introduction_to_React/02_introduction_to_react.md)
 
-## 🛠️ **Exercises: What is React?**
+## **Exercises: What is React?**
 
 1. What is React?
 
@@ -45,7 +45,7 @@
 
     > In React, A **Web App**, or simply Website, is a collection of Components which, together, can do many tasks like a Blog, Store Documents, Games...
 
-## 🛠️ **Exercises: Why React?**
+## **Exercises: Why React?**
 
 1. Why did you chose to use react?
 
@@ -59,7 +59,7 @@
 
     > **`skip`**
 
-## 🛠️ **Exercises: JSX**
+## **Exercises: JSX**
 
 1. What is an HTML element?
 
@@ -93,7 +93,7 @@
 
     > **`Babel`**, in this case, understands **ECMAScript** (JavaScript standard) and **converts** it to older JavaScript, thus, keep **compatibility** between engines and web browsers.
 
-## 🛠️ **Exercises: JSX Elements**
+## **Exercises: JSX Elements**
 
 1. What is a JSX element?
 
@@ -138,7 +138,7 @@
           );
     ```
 
-## 🛠️ **Exercises: Inline Style**
+## **Exercises: Inline Style**
 
 1. Create a style object for the main JSX
 
@@ -164,13 +164,13 @@
 
     > skip
 
-## 🛠️ **Exercises: Internal Styles**
+## **Exercises: Internal Styles**
 
 1. Apply different styles to your JSX elements
 
     > **`skip`**
 
-## 🛠️ **Exercise: Inject data to JSX**
+## **Exercise: Inject data to JSX**
 
 1. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
@@ -220,7 +220,7 @@
 
     > **`skip`**
 
-## 🛠️ **Exercises: Level 2**
+## **Exercises: Level 2**
 
 1. Import and render the following images
 
@@ -319,7 +319,7 @@
 
     > 🛰️ **`LIVE DEMO`** [day 3 - level 2.2](https://codesandbox.io/s/day-3-5dsrf)
 
-## 🛠️ **Exercises: Level 3**
+## **Exercises: Level 3**
 
 1. Design the following user card.
 
